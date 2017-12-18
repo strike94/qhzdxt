@@ -38,7 +38,7 @@
     <!-- 用户解析mybatis.xml文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
       		<property name="configLocation" value="classpath:/mybatis.xml"/>
-      		<property name="d.ataSource" ref="oraclePoolId"/>
+      		<property name="dataSource" ref="oraclePoolId"/>
       </bean>
 
       <!-- 使用mybatis时，将其注入到dao层用它来调用 insert select update 等方法  -->
