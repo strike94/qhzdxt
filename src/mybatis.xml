@@ -10,10 +10,7 @@
      <!-- 需要在指定文件中，配置我们要执行的sql语句 -->
 	<mappers>
 
-        <mapper resource="com/java/dao/Institutions.xml"/>
-		<mapper resource="com/java/dao/tree.xml"/>
-        <mapper resource="com/java/dao/laisser.xml"/>
-        <mapper resource="com/java/dao/paging.xml"/>
-        <mapper resource="com/java/dao/validation.xml"/>
+        <mapper resource="com/java/dao/notice.xml"/>
+
 	</mappers>
 </configuration>

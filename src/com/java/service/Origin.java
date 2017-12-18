@@ -1,4 +1,17 @@
 package com.java.service;
 
-public interface Origin {
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class Origin {
+    @Autowired
+    protected SqlSessionTemplate sqlSessionTemplate;
+
+    public String getBasePath(HttpServletRequest req){
+        String path = req.getContextPath();
+        String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort()+path+"/";
+        return basePath;
+    }
 }
