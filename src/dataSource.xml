@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+
+        <!-- 配置DBCP数据源  是指连接哪一个数据库,是一个连接池 -->
+        <bean id="sqlPoolId" class="org.apache.commons.dbcp.BasicDataSource"
+              destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver"
+              p:url="jdbc:mysql://localhost:3306/demo" p:username="root"
+              p:password="123456" />
+                <!-- 用户解析mybatis.xml文件 -->
+        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+                <property name="configLocation" value="classpath:/mybatis.xml"/>
+                <property name="dataSource" ref="sqlPoolId"/>
+        </bean>
+
+                <!-- 使用mybatis时，将其注入到dao层用它来调用 insert select update 等方法  -->
+        <bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+                 <constructor-arg index="0" ref="sqlSessionFactory" />
+        </bean>
+        <!-- 用来来管理事物 -->
+        <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+            <property name="dataSource" ref="sqlPoolId" />
+        </bean>
+</beans>

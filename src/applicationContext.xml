@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<import resource="dataSource.xml"></import>
+
+
+       <!--   扫描所有com.java.*包下面的类，检查是否有配置注解，根据不同的注解完成不同的功能。-->
+     <context:component-scan base-package="com.java.*" />
+     	<!-- 启用注解功能 -->
+     	<mvc:annotation-driven />
+
+    <mvc:resources location="/themes/images/" mapping="/themes/images/**"/>
+    <mvc:resources location="/javascript/" mapping="/javascript/**"/>
+    <mvc:resources location="/themes/css/" mapping="/themes/css/**"/>
+	     <mvc:resources location="/page/" mapping="/page/**"/>
+    <mvc:resources location="/javascript/ueditor1_4_3-utf8-net/" mapping="/javascript/ueditor1_4_3-utf8-net/**"/>
+
+    <!-- 配置DBCP数据源  是指连接哪一个数据库,是一个连接池 -->
+      <bean id="oraclePoolId" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver"
+		p:url="jdbc:mysql://localhost:3306/jigou" p:username="root"
+		p:password="123456" />
+    <!-- 用户解析mybatis.xml文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+      		<property name="configLocation" value="classpath:/mybatis.xml"/>
+      		<property name="d.ataSource" ref="oraclePoolId"/>
+      </bean>
+
+      <!-- 使用mybatis时，将其注入到dao层用它来调用 insert select update 等方法  -->
+      <bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+       </bean>
+			<mvc:interceptors>
+				<mvc:interceptor>
+                   <mvc:mapping path="/back/**"/>
+					<bean class="com.java.interceptor.LoginInvalide"></bean>
+				</mvc:interceptor>
+			</mvc:interceptors>
+
+
+    <bean
+	      class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+				p:prefix="/WEB-INF" p:suffix=".jsp" />
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
