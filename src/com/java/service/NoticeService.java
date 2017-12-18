@@ -1,8 +1,11 @@
 package com.java.service;
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class NoticeService extends Origin{
     public int addNotice(int userid, String type, String name, String docnum, String date, String local
             , String address){
