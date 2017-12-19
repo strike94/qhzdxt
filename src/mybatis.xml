@@ -11,6 +11,7 @@
 	<mappers>
 
         <mapper resource="com/java/dao/notice.xml"/>
+        <mapper resource="com/java/dao/login.xml"/>
 
 	</mappers>
 </configuration>

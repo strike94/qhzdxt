@@ -24,7 +24,7 @@ public class Login {
         if (user!= null) {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            return  new ModelAndView(new RedirectView());
+            return  new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
         }else{
             return new ModelAndView("page/login");
         }

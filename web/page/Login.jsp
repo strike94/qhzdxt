@@ -52,15 +52,15 @@
     <div class="loginbox">
         <div class="errorbox"><i class="error"></i>用户名或密码错误，请重新输入！</div>
         <div class="logongroup">
-            <input class="intext" id="username" type="text"  placeholder="用户名" />
+            <input class="intext" id="username" type="text" name="username"  placeholder="用户名" />
             <i class="user"></i>
         </div>
         <div class="logongroup">
-            <input class="intext" id="password" type="password"  placeholder="密码" />
+            <input class="intext" id="password" type="password" name="password"  placeholder="密码" />
             <i class="password"></i>
         </div>
         <div class="logongroup submitbox">
-            <button class="submitbtn" type="submit" ">登&nbsp;&nbsp;录</button>
+            <button class="submitbtn" type="submit">登&nbsp;&nbsp;录</button>
         </div>
     </div>
     </form>

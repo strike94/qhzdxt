@@ -11,12 +11,9 @@ public class LoginService extends  Origin{
     public User login(String username,String password){
         Map map=new HashMap();
         map.put("username",username);
-        Map rs=super.sqlSessionTemplate.selectOne("",map);
-        User user=new User();
-        if (password.equals(rs.get("password"))){
-            user.setUserid((Integer) rs.get("userid"));
-            user.setUsername(username);
-        }
+        map.put("password",password);
+        map=super.sqlSessionTemplate.selectOne("loginNameSpace.login",map);
+        User user = new User((Integer)map.get("userid"),username);
         return user;
     }
 }
