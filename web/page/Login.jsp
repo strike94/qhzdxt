@@ -23,22 +23,6 @@
     <script type="text/javascript" src="<%=basePath %>javascript/jquery-1.11.1.min.js"></script>
     <script type="text/javascript">
 
-        function submitinfor(){
-            var username =$("#username").val();
-            if(username=="admin"){
-                location.href="default.html";
-            }else{
-                $(".errorbox").slideDown();
-            }
-        }
-        document.onkeydown = function (e)
-        {
-            var ev = document.all ? window.event : e;
-            if (ev.keyCode == 13) {
-                submitinfor();
-            }
-        }
-
     </script>
 </head>
 
