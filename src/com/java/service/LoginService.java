@@ -15,7 +15,9 @@ public class LoginService extends  Origin{
         map.put("password",password);
         List<Map> data=super.sqlSessionTemplate.selectList("loginNameSpace.login",map);
         if(data.size()>0) {
-            User user = new User((Integer) data.get(0).get("userid"),username);
+            User user = new User();
+            user.setUserid((Integer) data.get(0).get("userid"));
+            user.setUsername(username);
             return user;
         }
         return null;

@@ -1,12 +1,13 @@
 package com.java.beans;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class User {
     private int userid;
     private String username;
-
 }
