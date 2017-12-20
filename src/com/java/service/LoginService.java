@@ -13,10 +13,11 @@ public class LoginService extends  Origin{
         Map map=new HashMap();
         map.put("username",username);
         map.put("password",password);
-        List<Map> data=super.sqlSessionTemplate.selectList("loginNameSpace.login",map);
-        if(data.size()>0) {
+        List<Map> list=super.sqlSessionTemplate.selectList("loginNameSpace.login",map);
+        if(list.size()>0) {
+            Map data=list.get(0);
             User user = new User();
-            user.setUserid((Integer) data.get(0).get("userid"));
+            user.setUserid((Integer) data.get("userid"));
             user.setUsername(username);
             return user;
         }
