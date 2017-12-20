@@ -13,5 +13,6 @@
         <mapper resource="com/java/dao/notice.xml"/>
         <mapper resource="com/java/dao/login.xml"/>
         <mapper resource="com/java/dao/plan.xml"/>
+        <mapper resource="com/java/dao/project.xml"/>
 	</mappers>
 </configuration>
