@@ -9,14 +9,15 @@ import java.util.Map;
 public class NoticeService extends Origin{
     public int addNotice(int userid, String type, String name, String docnum, String date, String local
             , String address){
+        String localadd=local+address;
         Map map=new HashMap<>();
         map.put("type",type);
         map.put("name",name);
         map.put("docnum",docnum);
-        map.put("address",local+address);
+        map.put("address",localadd);
         map.put("date",date);
         map.put("g_userid",userid);
-        int rs=super.sqlSessionTemplate.insert("",map);
+        int rs=super.sqlSessionTemplate.insert("noticeNameSpace.addnotice",map);
         return rs;
     }
 }
