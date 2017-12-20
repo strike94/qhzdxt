@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: 神裂火织
   Date: 2017/12/20
-  Time: 14:48
+  Time: 16:05
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -68,7 +68,7 @@
 </div>
 <div class="content">
     <div class="wrp clearfix">
-        <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">拟征收土地公告</a><b class="partLine grayColor">/</b><b>新增拟征收土地公告</b></span></div>
+        <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">拟征收土地补偿安置方案公告</a><b class="partLine grayColor">/</b><b>新增拟征收土地补偿安置方案公告</b></span></div>
         <div class="processWrap">
             <div class="processBox threeStep">
                 <div class="percentage"></div>
@@ -92,27 +92,9 @@
             </div>
 
         </div>
-        <form action="<%=basePath %>notice/add" method="post">
+        <form action="<%=basePath %>plan/addplan" method="post">
         <div class="pulicBox">
-
             <div class="newArticle">
-                <div class="msgEditlabel clearfix">
-                    <div class="halfPart"> <em class="frmLabel">公告类型</em>
-                        <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <div class="selectionGroup">
-                                <div class="dropDown"  style="width:300px;">
-                                    <select data-placeholder="请选择" class="chosen-select-no-single" tabindex="9" name="type">
-                                        <option value="" ></option>
-                                        <option value="拟征收土地公告">拟征收土地公告</option>
-                                        <option value="拟征收土地补偿安置方案公告">拟征收土地补偿安置方案公告</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
-                    </div>
-
-                </div>
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">公告名称</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
@@ -122,7 +104,7 @@
                     </div>
                     <div class="halfPart"> <em class="frmLabel">文号</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="docnum" />
+                            <input type="text" class="textInput"  name="docnum" />
                         </div>
                     </div>
                 </div>
@@ -149,7 +131,7 @@
                             </div>
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
-                                    <select data-placeholder="所在区县" class="chosen-select-no-single" tabindex="9"  name="local2">
+                                    <select data-placeholder="所在区县" class="chosen-select-no-single" tabindex="9" name="local2">
                                         <option value=""></option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
@@ -160,7 +142,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9" name="local3">
-                                        <option value="" ></option>
+                                        <option value=""></option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -202,7 +184,7 @@
         </div>
         <div class="ctrlBar">
             <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-            <button class="ctrlBtn focusBtn" onClick="javascript:location.href='notice.html'">保存</button>
+            <button class="ctrlBtn focusBtn" onClick="javascript:location.href='plan.html'">保存</button>
             <button class="ctrlBtn focusBtn" type="submit">保存并送审</button>
         </div>
         </form>
@@ -223,4 +205,3 @@
 </script>
 </body>
 </html>
-
