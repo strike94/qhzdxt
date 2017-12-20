@@ -29,6 +29,6 @@ public class Notice  {
         if (rs==1){
             System.out.println("数据录入成功");
         }
-        return new ModelAndView(new RedirectView());
+        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
     }
 }

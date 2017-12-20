@@ -92,8 +92,9 @@
             </div>
 
         </div>
+        <form action="<%=basePath %>notice/add" method="post">
         <div class="pulicBox">
-            <form action="<%=basePath %>notice/add" method="post">
+
             <div class="newArticle">
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">公告类型</em>
