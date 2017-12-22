@@ -3,6 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="planNameSpace">
     <insert id="addplan" parameterType="map">
-         INSERT INTO z_plan(Plan_userid,Plan_name,Plan_docnum,address,Plan_time) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{address},#{Plan_time});
+         INSERT INTO z_plan(Plan_userid,Plan_name,Plan_docnum,address,Plan_time,url) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{address},#{Plan_time},#{url});
     </insert>
 </mapper>

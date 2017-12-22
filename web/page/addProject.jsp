@@ -99,7 +99,7 @@
                 <div class="pocessLine"> <span class="processPoint active"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">省厅发起项目</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">县级填报</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">市（州）填报</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">省厅同意发布</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">发布成功</b> </span> </div>
             </div>
         </div>
-        <form action="<%=basePath%>project/add" method="post">
+        <form action="<%=basePath%>project/add" method="post" enctype="multipart/form-data">
         <div class="pulicBox">
             <div class="newArticle">
                 <div class="msgEditlabel clearfix">
