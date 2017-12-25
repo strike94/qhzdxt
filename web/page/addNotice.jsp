@@ -185,7 +185,7 @@
                             <div class="uploadBox">
                                 <div class="uploadContrl">
                                     <span class="uploadTxt">上传</span>
-                                    <input type="file" class="uploadInput" />
+                                    <input type="file" class="uploadInput"  name="file"/>
 
                                 </div>
                                 <div class="uploadFinish">
