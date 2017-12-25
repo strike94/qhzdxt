@@ -92,7 +92,7 @@
             </div>
 
         </div>
-        <form action="<%=basePath %>plan/addplan" method="post">
+        <form action="<%=basePath %>plan/addplan" method="post" enctype="multipart/form-data">
         <div class="pulicBox">
             <div class="newArticle">
                 <div class="msgEditlabel clearfix">
@@ -167,7 +167,7 @@
                             <div class="uploadBox">
                                 <div class="uploadContrl">
                                     <span class="uploadTxt">上传</span>
-                                    <input type="file" class="uploadInput" />
+                                    <input type="file" class="uploadInput" name="file"/>
 
                                 </div>
                                 <div class="uploadFinish">

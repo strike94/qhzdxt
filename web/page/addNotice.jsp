@@ -92,7 +92,7 @@
             </div>
 
         </div>
-        <form action="<%=basePath %>notice/add" method="post">
+        <form action="<%=basePath %>notice/add" method="post" enctype="multipart/form-data">
         <div class="pulicBox">
 
             <div class="newArticle">

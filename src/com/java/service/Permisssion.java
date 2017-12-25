@@ -13,7 +13,7 @@ public class Permisssion extends Origin{
         if(list.size()>0) {
             for(int i=0;i<list.size();i++) {
                 Map data = list.get(i);
-                user.put("userid", (Integer) data.get("userid"));
+                user.put("userid",data.get("userid"));
                 user.put("username", data.get("username"));
                 user.put("rolepermission", data.get("rolepermission"));
                 super.sqlSessionTemplate.insert("permissionNameSpace.permissioninsert",user);
