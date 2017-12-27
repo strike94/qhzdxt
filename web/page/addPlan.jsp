@@ -44,6 +44,13 @@
                 d.content(elem).showModal();
             });
         });
+
+        function ttt() {
+            var filename=$('#file').val();
+            var arr=filename.split('\\');
+            $('.loadName').text(arr[arr.length-1]);
+            $('.uploadFinish').css("visibility","visible");
+        }
     </script>
 </head>
 
@@ -167,12 +174,12 @@
                             <div class="uploadBox">
                                 <div class="uploadContrl">
                                     <span class="uploadTxt">上传</span>
-                                    <input type="file" class="uploadInput" name="file"/>
+                                    <input type="file" class="uploadInput" name="file" onchange="ttt()" id="file"/>
 
                                 </div>
-                                <div class="uploadFinish">
+                                <div class="uploadFinish" style="visibility: hidden">
                                     <i class="success"></i><!--失败调用error-->
-                                    <span class="loadName">2017年度西商村拟征收土地公告.pdf</span>
+                                    <span class="loadName"></span>
                                     <a href="javascript:;" class="delUpfiles"></a>
                                 </div>
                             </div>

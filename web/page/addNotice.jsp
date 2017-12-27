@@ -47,7 +47,8 @@
 
          function ttt() {
              var filename=$('#file').val();
-             $('.loadName').text(filename);
+             var arr=filename.split('\\');
+             $('.loadName').text(arr[arr.length-1]);
              $('.uploadFinish').css("visibility","visible");
          }
     </script>

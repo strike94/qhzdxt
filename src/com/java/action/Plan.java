@@ -31,7 +31,8 @@ public class Plan extends FileUpload{
         int rs=service.addPlan(userid,name,docnum,date,local,address,filepath);
         if (rs==1){
             System.out.println("数据录入成功");
+            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
         }
-        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+        return null;
     }
 }

@@ -14,5 +14,6 @@
         <mapper resource="com/java/dao/login.xml"/>
         <mapper resource="com/java/dao/plan.xml"/>
         <mapper resource="com/java/dao/project.xml"/>
-	</mappers>
+        <mapper resource="com/java/dao/article.xml"/>
+    </mappers>
 </configuration>
