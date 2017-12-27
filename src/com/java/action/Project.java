@@ -32,7 +32,8 @@ public class Project extends FileUpload{
         int rs=service.addProject(userid,name,date,accessdate,local,address,type,docnum,filepath);
         if (rs==1){
             System.out.println("数据录入成功");
+            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
         }
-        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+        return null;
     }
 }
