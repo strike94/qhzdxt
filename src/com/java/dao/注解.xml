@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--user-->
+    <!--
+    userid            用户ID
+    username          用户帐号
+    nickname          用户昵称
+    password          用户密码
+    address           用户地址
+    lock              用户锁定状态
+    lastdate          用户最后登录时间
+    lastip            用户最后登录IP
+    logintime         用户登录次数
+    showtime          用户发布次数
+    assignor          用户分组人
+    Distribution time 用户分组时间
+    groupid           用户分组ID
+    roleid            用户角色ID
+    phonenum         用户电话
+    e-mail           用户邮箱
+    </user>-->
+
+    <!--role-->
+    <!--
+    roleid            角色ID
+    rolename          角色名称
+    rolepermission    角色权限
+    -->
+
+    <!--group-->
+    <!--
+    groupid                 分组ID
+    groupname               分组名称
+    creator                 分组创始人
+    creation time           分组创建时间
+    -->
+
+    <!--通用-->
+    <!--
+    s_userid   发布人ID
+    s_time     发布时间
+    -->
+
+    <!--article-->
+    <!--
+    article_name       法律名称
+    article_context    法律内容
+    article_type       法律类型
+    article_userid     法律审核人ID
+    article_time       法律审核时间
+    article_url        法律相关内容文件URL
+    -->
+
+    <!--notice-->
+    <!--
+    notice_name                 公告名称
+    notice_passtime             公告通过时间
+    notice_date                 公告审核时间
+    notice_userid               公告审核人
+    s_id                        省级文案编号
+    g_id                        国土文案编号
+    notice_address              公告管辖地址
+    notice_level                公告审核等级
+    notice_docnum               公告文号
+    notice_type                 公告类型
+    notice_url                  公告文件URL
+    -->
+
+    <!--project-->
+    <!--
+    project_name            项目名称
+    project_docnum          项目文号
+    project_passtime        项目通过时间
+    project_type            项目类型
+    project_address         项目地址
+    project_userid          项目一审人ID
+    project_time            项目一审时间
+    project2_userid         项目二审人ID
+    project2_time           项目二审时间
+    project3_userid         项目三审人ID
+    project3_time           项目三审时间
+    gp_url                  国土批准文件
+    sp_url                  省级比准文件
+    project_url             项目文件
+    -->
+
+    <!--plan-->
+    <!--
+    Plan_name          计划名称
+    Plan_docnum        计划文号
+    Plan_url           计划文件
+    Plan_address       计划规划地
+    Plan_time          计划审核时间
+    Plan_userid        计划审核人ID
+    -->
+</beans>
+
+
+
+
+
+
