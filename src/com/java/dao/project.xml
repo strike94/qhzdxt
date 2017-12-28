@@ -3,6 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="projectNameSpace">
     <insert id="addproject" parameterType="map">
-         INSERT INTO z_project(z_userid,z_name,z_time,z_passtime,z_docnum,address,type,p_url) VALUES (#{z_userid},#{z_name},#{z_time},#{z_passtime},#{z_docnum},#{address},#{type},#{url});
+         INSERT INTO z_project(project_userid,project_name,project_time,project_passtime,project_docnum,project_address,project_type,project_url) VALUES (#{z_userid},#{z_name},#{z_time},#{z_passtime},#{z_docnum},#{address},#{type},#{url});
     </insert>
 </mapper>
