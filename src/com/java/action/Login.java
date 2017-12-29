@@ -26,7 +26,7 @@ public class Login {
             session.setAttribute("user", user);
             return  new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
         }else{
-            return new ModelAndView("page/login");
+            return new ModelAndView("/page/login");
         }
     }
 }

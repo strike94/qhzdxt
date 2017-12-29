@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -36,4 +37,18 @@ public class Notice extends FileUpload {
         }
         return null;
     }
+
+    @RequestMapping("/show")
+    public ModelAndView show(HttpServletRequest req,String PageNum){
+        ServletContext sc=req.getSession().getServletContext();
+        sc.removeAttribute("notice");
+        int currentPage=1;
+        if (PageNum!=null && !"".equals(PageNum)){
+            currentPage=Integer.parseInt(PageNum);
+        }
+        req.setAttribute("pageNum",currentPage);
+        service.show(req,currentPage);
+        return new ModelAndView("/page/notice");
+    }
+
 }

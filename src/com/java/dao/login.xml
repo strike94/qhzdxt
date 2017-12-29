@@ -4,6 +4,6 @@
 <mapper namespace="loginNameSpace">
 
     <select id="login" parameterType="map" resultType="map">
-        SELECT * FROM z_user WHERE username=#{username} and password=#{password}
+        SELECT userid,username,password FROM z_user WHERE username=#{username} and password=#{password}
     </select>
 </mapper>

@@ -5,4 +5,10 @@
     <insert id="addnotice" parameterType="map">
          INSERT INTO z_notice(notice_name,notice_date,notice_userid,notice_address,notice_docnum,notice_type,notice_url) VALUES (#{name},#{date},#{g_userid},#{address},#{docnum},#{type},#{url});
     </insert>
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_notice;
+    </select>
+    <select id="selectnotice" parameterType="map" resultType="map">
+        SELECT * FROM z_notice limit #{pageNum},#{pageSize};
+    </select>
 </mapper>
