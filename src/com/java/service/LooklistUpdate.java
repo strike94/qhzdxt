@@ -47,6 +47,7 @@ public class LooklistUpdate extends Origin{
                 user.put("notice_docnum", data.get("notice_docnum"));
                 user.put("notice_type", data.get("notice_type"));
                 user.put("notice_url", data.get("notice_url"));
+                user.put("notice_street", data.get("notice_street"));
                 super.sqlSessionTemplate.insert("looklistSpace.looknoticeinsert",user);
             }
         }
@@ -68,6 +69,8 @@ public class LooklistUpdate extends Origin{
                 user.put("Plan_address", data.get("Plan_address"));
                 user.put("Plan_userid", data.get("Plan_userid"));
                 user.put("Plan_time", data.get("Plan_time"));
+                user.put("Plan_street", data.get("Plan_street"));
+                user.put("Plan_context", data.get("Plan_context"));
                 super.sqlSessionTemplate.insert("looklistSpace.lookplaninsert",user);
             }
         }
@@ -97,6 +100,9 @@ public class LooklistUpdate extends Origin{
                 user.put("gp_url", data.get("gp_url"));
                 user.put("sp_url", data.get("sp_url"));
                 user.put("project_url", data.get("project_url"));
+                user.put("project_street", data.get("project_street"));
+                user.put("project_state", data.get("project_state"));
+                user.put("project_context", data.get("project_context"));
                 super.sqlSessionTemplate.insert("looklistSpace.lookprojectinsert",user);
             }
         }

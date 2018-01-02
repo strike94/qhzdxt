@@ -93,9 +93,9 @@
 <div class="content">
     <div class="menu">
         <ul>
-            <li><a href="article.html" class="all"><i></i><span>所有文章</span></a></li>
-            <li><a href="article.html" class="active"><i></i><span>相关法律法规</span></a></li>
-            <li><a href="article.html" class="end"><i></i><span>征地补偿标准</span></a></li>
+            <li><a href="article.jsp" class="all"><i></i><span>所有文章</span></a></li>
+            <li><a href="article.jsp" class="active"><i></i><span>相关法律法规</span></a></li>
+            <li><a href="article.jsp" class="end"><i></i><span>征地补偿标准</span></a></li>
         </ul>
     </div>
     <div class="wrp hasleft">
@@ -159,7 +159,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.html">立即处理</a>
+                        <a class="messageTodo" href="plan.jsp">立即处理</a>
                     </div>
                 </li>
                 <li class="messageItem">
@@ -167,7 +167,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.html">立即处理</a>
+                        <a class="messageTodo" href="plan.jsp">立即处理</a>
                     </div>
                 </li>
                 <li class="messageItem">
@@ -175,7 +175,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.html">立即处理</a>
+                        <a class="messageTodo" href="plan.jsp">立即处理</a>
                     </div>
                 </li>
             </ul><div class="loadMore">

@@ -91,13 +91,13 @@
             <div class="funprocess">项目审批前</div>
             <div class="taskBox"> <a href="<%=basePath%>page/addNotice.jsp" class="initiate">发布批前征地信息公告</a> </div>
         </li>
-        <li class="fadeInUp f3"><a href="project.html" class="hdBox after"><img src="<%=basePath %>uploadfiles/report.png" /> <span class="subSys">批后征地信息项目</span></a>
-            <div class="stat"> <a href="project.html"><i>23</i><b>我办理的项目</b></a> <a href="project.html"><i>13</i><b>我的待办</b></a> </div>
+        <li class="fadeInUp f3"><a href="project.jsp" class="hdBox after"><img src="<%=basePath %>uploadfiles/report.png" /> <span class="subSys">批后征地信息项目</span></a>
+            <div class="stat"> <a href="project.jsp"><i>23</i><b>我办理的项目</b></a> <a href="project.jsp"><i>13</i><b>我的待办</b></a> </div>
             <div class="funprocess">项目审批后</div>
             <div class="taskBox"> <a href="addproject.html" class="initiate disabledBtn">发起批后征地信息项目</a> </div>
         </li>
-        <li class="fadeInUp f2"><a href="article.html" class="hdBox article"><img src="<%=basePath %>uploadfiles/plan.png" /> <span class="subSys">征地信息文章</span></a>
-            <div class="stat allPart"> <a href="article.html"><i>18</i><b>我发起的文章</b></a> </div>
+        <li class="fadeInUp f2"><a href="article.jsp" class="hdBox article"><img src="<%=basePath %>uploadfiles/plan.png" /> <span class="subSys">征地信息文章</span></a>
+            <div class="stat allPart"> <a href="article.jsp"><i>18</i><b>我发起的文章</b></a> </div>
             <div class="funprocess">&nbsp;&nbsp;</div>
             <div class="taskBox"> <a href="<%=basePath%>page/newArticle.jsp" class="initiate">发布征地信息文章</a> </div>
         </li>
@@ -112,7 +112,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.html">立即处理</a>
+                        <a class="messageTodo" href="plan.jsp">立即处理</a>
                     </div>
                 </li>
                 <li class="messageItem">
@@ -120,7 +120,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.html">立即处理</a>
+                        <a class="messageTodo" href="plan.jsp">立即处理</a>
                     </div>
                 </li>
                 <li class="messageItem">
@@ -128,7 +128,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.html">立即处理</a>
+                        <a class="messageTodo" href="plan.jsp">立即处理</a>
                     </div>
                 </li>
             </ul>

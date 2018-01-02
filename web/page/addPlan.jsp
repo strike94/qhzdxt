@@ -191,7 +191,7 @@
         </div>
         <div class="ctrlBar">
             <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-            <button class="ctrlBtn focusBtn" onClick="javascript:location.href='plan.html'">保存</button>
+            <button class="ctrlBtn focusBtn" onClick="javascript:location.href='plan.jsp'">保存</button>
             <button class="ctrlBtn focusBtn" type="submit">保存并送审</button>
         </div>
         </form>
