@@ -45,13 +45,6 @@
             });
         });
 
-
-        function ttt() {
-            var filename="${data.notice_url}";
-            console.log(filename);
-            var arr=filename.split('\\');
-            $('.loadName').text(arr[arr.length-1]);
-        }
     </script>
 </head>
 
@@ -120,7 +113,7 @@
                             <div class="uploadBox">
 
                                 <div class="uploadFinish"><!--失败调用error-->
-                                    <a href="javascript:;" class="loadName" >${data.notice_url}  </a> </div>
+                                    <a href="javascript:;" class="loadName" >${data.notice_context}  </a> </div>
                             </div>
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
