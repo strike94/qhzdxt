@@ -15,6 +15,8 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("all")
 @Controller
@@ -29,8 +31,10 @@ public class Notice extends FileUpload {
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
         String local=local1+local2+local3;
-        String filepath=fileUpload(req,file);
-        int rs=service.addNotice(userid,type,name,docnum,date,local,address,filepath);
+        Map map=fileUpload(req,file);
+        String filepath= (String) map.get("filePath");
+        String filename= (String) map.get("fileName");
+        int rs=service.addNotice(userid,type,name,docnum,date,local,address,filepath,filename);
         if (rs==1){
             System.out.println("数据录入成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
@@ -51,4 +55,11 @@ public class Notice extends FileUpload {
         return new ModelAndView("/page/notice");
     }
 
+    @RequestMapping("detail")
+    public ModelAndView detail(String noticeid){
+        Map data=service.detail(noticeid);
+        Map map=new HashMap();
+        map.put("data",data);
+        return new ModelAndView("/page/noticeDetail",map);
+    }
 }

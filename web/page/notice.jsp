@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%   String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -136,7 +135,7 @@
                             <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
                 <input name="" type="checkbox" value="" />
                 <i></i></span></td>
-                            <td><a href="noticeDetail.html" class="heightColor">${obj.notice_name}</a></td>
+                            <td><a href="<%=basePath%>notice/detail?noticeid=${obj.notice_id}" class="heightColor">${obj.notice_name}</a></td>
                             <td>${obj.notice_docnum}</td>
                             <td>${obj.notice_address}</td>
                             <td>${obj.notice_date }</td>

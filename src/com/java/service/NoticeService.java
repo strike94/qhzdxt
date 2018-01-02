@@ -12,16 +12,17 @@ import java.util.Map;
 @Service
 public class NoticeService extends Origin{
     public int addNotice(int userid, String type, String name, String docnum, String date, String local
-            , String address, String filepath){
-        String localadd=local+address;
+            , String address, String filepath,String filename){
         Map map=new HashMap<>();
         map.put("type",type);
         map.put("name",name);
         map.put("docnum",docnum);
-        map.put("address",localadd);
+        map.put("local",local);
+        map.put("add",address);
         map.put("date",date);
         map.put("g_userid",userid);
         map.put("url",filepath);
+        map.put("filename",filename);
         int rs=super.sqlSessionTemplate.insert("noticeNameSpace.addnotice",map);
         return rs;
     }
@@ -39,5 +40,12 @@ public class NoticeService extends Origin{
             List<Map> data=super.sqlSessionTemplate.selectList("noticeNameSpace.selectnotice",map);
             sc.setAttribute("notice",data);
         }
+    }
+
+    public Map detail(String noticeid) {
+        Map map=new HashMap();
+        map.put("noticeid",noticeid);
+        Map data=super.sqlSessionTemplate.selectOne("noticeNameSpace.noticedetail",map);
+        return data;
     }
 }

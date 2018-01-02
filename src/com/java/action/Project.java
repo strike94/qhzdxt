@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 @Controller
 @RequestMapping("project")
@@ -28,8 +29,10 @@ public class Project extends FileUpload{
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
-        String filepath=fileUpload(req,file);
-        int rs=service.addProject(userid,name,date,accessdate,local,address,type,docnum,filepath);
+        Map map=fileUpload(req,file);
+        String filepath= (String) map.get("filePath");
+        String filename= (String) map.get("fileName");
+        int rs=service.addProject(userid,name,date,accessdate,local,address,type,docnum,filepath,filename);
         if (rs==1){
             System.out.println("数据录入成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
