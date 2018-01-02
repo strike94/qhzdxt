@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="looklistSpace">
+    <select id="lookarticleselect" resultType="map">
+        SELECT userid,nickname,s_time,article_name,article_context,article_type,article_url,article_userid,article_time
+        FROM z_user z1 JOIN z_article z2 ON z1.`userid`=z2.`s_userid`
+    </select>
+
+    <delete id="lookarticletruncate">
+        TRUNCATE TABLE z_lookarticle
+    </delete>
+
+    <insert id="lookarticleinsert" parameterType="map">
+        INSERT INTO z_lookarticle(userid,nickname,s_time,article_name,article_context,article_type,article_url,article_userid,article_time)
+        VALUES (#{userid},#{nickname},#{s_time},#{article_name},#{article_context},#{article_type},#{article_url},#{article_userid},#{article_time})
+    </insert>
+
+    <select id="looknoticeselect" resultType="map">
+    SELECT userid,nickname,s_time,notice_name,notice_passtime,notice_date,notice_userid,s_id,g_id,notice_address,notice_level,notice_docnum,notice_type,notice_url
+    FROM z_user z1 JOIN z_notice z2 ON z1.`userid`=z2.`s_userid`
+    </select>
+
+    <delete id="lookarticletruncate">
+        TRUNCATE TABLE z_looknotice
+    </delete>
+
+    <insert id="looknoticeinsert" parameterType="map">
+        INSERT INTO z_looknotice(userid,nickname,s_time,notice_name,notice_passtime,notice_date,notice_userid,s_id,g_id,notice_address,notice_level,notice_docnum,notice_type,notice_url)
+        VALUES (#{userid},#{nickname},#{s_time},#{notice_name},#{notice_passtime},#{notice_date},#{notice_userid}#{s_id},,#{g_id},#{notice_address},#{notice_level},#{notice_docnum},#{notice_type},#{notice_url})
+    </insert>
+
+    <select id="lookplanselect" resultType="map">
+        SELECT userid,s_time,nickname,Plan_name,Plan_docnum,Plan_url,Plan_address,Plan_userid,Plan_time
+        FROM z_user z1 JOIN z_plan z2 ON z1.`userid`=z2.`s_userid`
+    </select>
+
+    <delete id="lookplantruncate">
+        TRUNCATE TABLE z_lookplan
+    </delete>
+
+    <insert id="lookplaninsert" parameterType="map">
+        INSERT INTO z_lookplan(userid,s_time,nickname,Plan_name,Plan_docnum,Plan_url,Plan_address,Plan_userid,Plan_time)
+        VALUES (#{userid},#{s_time},#{nickname},#{Plan_name},#{Plan_docnum},#{Plan_url},#{Plan_address},#{Plan_userid},#{Plan_time})
+    </insert>
+
+    <select id="lookprojectselect" resultType="map">
+        SELECT userid,nickname,s_time,project_name,project_docnum,project_passtime,project_type,project_address,project_userid,project_time,project2_userid,project2_time,project3_userid,project3_time,gp_url,sp_url,project_url
+        FROM z_user z1 JOIN z_project z2 ON z1.`userid`=z2.`s_userid`
+    </select>
+
+    <delete id="lookprojecttruncate">
+        TRUNCATE TABLE z_lookproject
+    </delete>
+
+    <insert id="lookprojectinsert" parameterType="map">
+        INSERT INTO z_lookproject(userid,nickname,s_time,project_name,project_docnum,project_passtime,project_type,project_address,project_userid,project_time,project2_userid,project2_time,project3_userid,project3_time,gp_url,sp_url,project_url)
+        VALUES (#{userid},#{nickname},#{s_time},#{project_name},#{project_docnum},#{project_passtime},#{project_type},#{project_address},#{project_userid},#{project_time},#{project2_userid},#{project2_time},#{project3_userid},#{project3_time},#{gp_url},#{sp_url},#{project_url})
+    </insert>
+</mapper>
