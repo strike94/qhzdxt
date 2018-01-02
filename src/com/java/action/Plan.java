@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -50,5 +51,12 @@ public class Plan extends FileUpload{
         req.setAttribute("pageNum",currentPage);
         service.show(req,currentPage);
         return new ModelAndView("/page/notice");
+    }
+    @RequestMapping("detail")
+    public ModelAndView detail(String planid){
+        Map data=service.detail(planid);
+        Map map=new HashMap();
+        map.put("data",data);
+        return new ModelAndView("/page/planDetail",map);
     }
 }

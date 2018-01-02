@@ -37,4 +37,10 @@ public class PlanService extends Origin{
             sc.setAttribute("plan",data);
         }
     }
+    public Map detail(String planid) {
+        Map map=new HashMap();
+        map.put("planid",planid);
+        Map data=super.sqlSessionTemplate.selectOne("planNameSpace.plandetail",map);
+        return data;
+    }
 }

@@ -11,4 +11,7 @@
     <select id="selectplan" parameterType="map" resultType="map">
         SELECT * FROM z_Plan limit #{pageNum},#{pageSize};
     </select>
+    <select id="plandetail" parameterType="map" resultType="map">
+        SELECT * FROM z_Plan WHERE Plan_id=#{planid};
+    </select>
 </mapper>

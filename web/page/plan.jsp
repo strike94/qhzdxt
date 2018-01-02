@@ -130,7 +130,7 @@
               <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
                 <input name="" type="checkbox" value="" />
                 <i></i></span></td>
-              <td><a href="planDetail.html" class="heightColor">${obj.Plan_name}</a></td>
+              <td><a href="<%=basePath%>plan/detail?planid=${obj.Plan_id}" class="heightColor">${obj.Plan_name}</a></td>
               <td>${obj.Plan_docnum}</td>
               <td>${obj.Plan_address}</td>
               <td>${obj.Plan_date }</td>
