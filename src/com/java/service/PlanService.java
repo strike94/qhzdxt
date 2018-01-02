@@ -2,7 +2,10 @@ package com.java.service;
 
 import org.springframework.stereotype.Service;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -19,5 +22,19 @@ public class PlanService extends Origin{
         map.put("filename",filename);
         int rs=super.sqlSessionTemplate.insert("planNameSpace.addplan",map);
         return rs;
+    }
+    public void show(HttpServletRequest req, int currentPage) {
+        ServletContext sc=req.getSession().getServletContext();
+        int pageSize=5;
+        Map map=new HashMap();
+        map.put("pageSize",pageSize);
+        map.put("pageNum",(currentPage-1)*5);
+        int num=super.sqlSessionTemplate.selectOne("planNameSpace.count");
+        int maxPage=(num+(pageSize-1))/pageSize;
+        req.setAttribute("maxPage",maxPage);
+        if (sc.getAttribute("plan")==null){
+            List<Map> data=super.sqlSessionTemplate.selectList("planNameSpace.selectplan",map);
+            sc.setAttribute("plan",data);
+        }
     }
 }

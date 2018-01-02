@@ -66,6 +66,7 @@
     notice_docnum               公告文号
     notice_type                 公告类型
     notice_url                  公告文件URL
+    notice_context             公告文件名
     -->
 
     <!--project-->
@@ -75,6 +76,7 @@
     project_passtime        项目通过时间
     project_type            项目类型
     project_address         项目地址
+    project_street          项目所属村居
     project_userid          项目一审人ID
     project_time            项目一审时间
     project2_userid         项目二审人ID
@@ -84,6 +86,8 @@
     gp_url                  国土批准文件
     sp_url                  省级比准文件
     project_url             项目文件
+    project_state           项目状态
+    project_context         项目文件名称
     -->
 
     <!--plan-->
@@ -92,8 +96,10 @@
     Plan_docnum        计划文号
     Plan_url           计划文件
     Plan_address       计划规划地
+    Plan_street        计划所属村居
     Plan_time          计划审核时间
     Plan_userid        计划审核人ID
+    Plan_context       计划文件名称
     -->
 </beans>
 

@@ -5,4 +5,10 @@
     <insert id="addplan" parameterType="map">
          INSERT INTO z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_address,Plan_street,Plan_time,Plan_url,Plan_context) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local},#{address},#{Plan_time},#{url},#{filename});
     </insert>
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_Plan;
+    </select>
+    <select id="selectplan" parameterType="map" resultType="map">
+        SELECT * FROM z_Plan limit #{pageNum},#{pageSize};
+    </select>
 </mapper>
