@@ -18,7 +18,7 @@ public class User {
     @Autowired
     Userservice service;
 
-    @RequestMapping(value = "add",method = RequestMethod.POST)
+    @RequestMapping(value = "new",method = RequestMethod.POST)
     public ModelAndView login(HttpServletRequest req,String username,String lock, String nickname,String email,String phonenum,String address,int roleid,int groupid,String remark){
         int rs=service.addUser(username,lock,nickname,email,phonenum,address,roleid,groupid,remark);
         if (rs==1){
@@ -26,7 +26,7 @@ public class User {
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
         }if(rs==2){
                 System.out.println("用户已存在");
-                return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/adduser.jsp"));
+                return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/newAccount.jsp"));
         }
         return null;
     }
