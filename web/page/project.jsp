@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -12,14 +11,14 @@
 <meta name="Description" content=""/>
 <meta name="keywords" content=""/>
 <title>青海省征地信息公开系统-批后征地信息</title>
-<link type="text/css" rel="stylesheet" href="../themes/base.css" />
-<link type="text/css" rel="stylesheet" href="../themes/default.css" />
-<link type="text/css" rel="stylesheet" href="../javascript/chosen/chosen.min.css" />
-<link type="text/css" rel="stylesheet" href="../javascript/artDialog-master/css/ui-dialog.css" />
-<script type="text/javascript" src="../javascript/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="../javascript/common.js"></script>
-<script type="text/javascript" src="../javascript/chosen/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="../javascript/artDialog-master/dist/dialog-plus-min.js"></script>
+<link type="text/css" rel="stylesheet" href="<%=basePath%>themes/css/base.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>themes/css/default.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>javascript/chosen/chosen.min.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>javascript/artDialog-master/css/ui-dialog.css" />
+<script type="text/javascript" src="<%=basePath%>javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>javascript/common.js"></script>
+<script type="text/javascript" src="<%=basePath%>javascript/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>javascript/artDialog-master/dist/dialog-plus-min.js"></script>
 <script type="text/javascript">
     function checkboxSelect(obj){
         if($(obj).hasClass("selected")){
@@ -133,63 +132,6 @@
               <th>批准年度</th>
               <th>状态</th>
               <th>操作</th>
-            </tr>
-            <tr>
-              <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
-                <input name="" type="checkbox" value="" />
-                <i></i></span></td>
-              <td><a href="projectDetail.html" class="heightColor">2017年度西商村拟征收土地公告</a></td>
-              <td>ABC-123456</td>
-              <td>三坐标</td>
-              <td>2015</td>
-              <td>省厅发起</td>
-              <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
-                <div class="menuGroupBox">
-                  <ul>
-                    <li><a href="projectDetail.html">详情</a></li>
-                    <li><a href="javascript:;">发布</a></li>
-                    <li><a href="javascript:;" class="delPlan">删除</a></li>
-                  </ul>
-                </div>
-                </span></td>
-            </tr>
-            <tr>
-              <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
-                <input name="" type="checkbox" value="" />
-                <i></i></span></td>
-              <td><a href="projectDetail01.html" class="heightColor">2017年度西商村拟征收土地公告</a></td>
-              <td>ABC-123456</td>
-              <td>三坐标</td>
-              <td>2015</td>
-              <td>县级填报</td>
-              <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
-                <div class="menuGroupBox">
-                  <ul>
-                    <li><a href="projectDetail01.html">详情</a></li>
-                    <li><a href="javascript:;">发布</a></li>
-                    <li><a href="javascript:;" class="delPlan">删除</a></li>
-                  </ul>
-                </div>
-                </span></td>
-            </tr>
-            <tr>
-              <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
-                <input name="" type="checkbox" value="" />
-                <i></i></span></td>
-              <td><a href="projectDetail02.html" class="heightColor">2017年度西商村拟征收土地公告</a></td>
-              <td>ABC-123456</td>
-              <td>三坐标</td>
-              <td>2015</td>
-              <td>市（州）级填报</td>
-              <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
-                <div class="menuGroupBox">
-                  <ul>
-                    <li><a href="projectDetail02.html">详情</a></li>
-                    <li><a href="javascript:;">发布</a></li>
-                    <li><a href="javascript:;" class="delPlan">删除</a></li>
-                  </ul>
-                </div>
-                </span></td>
             </tr>
             <c:forEach items="${applicationScope.project}" var="obj">
              <tr>
