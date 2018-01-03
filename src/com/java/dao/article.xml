@@ -9,6 +9,6 @@
         SELECT COUNT(*) FROM z_article;
     </select>
     <select id="selectarticle" parameterType="map" resultType="map">
-        SELECT * FROM z_article limit #{pageNum},#{pageSize};
+        SELECT * FROM z_article z1 JOIN z_user z2  ON z1.`s_userid`=z2.`userid` LIMIT #{pageNum},#{pageSize};
     </select>
 </mapper>

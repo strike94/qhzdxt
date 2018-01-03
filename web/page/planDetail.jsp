@@ -11,8 +11,8 @@
 <meta name="Description" content=""/>
 <meta name="keywords" content=""/>
 <title>青海省征地信息公开系统-拟征收土地公告-新增</title>
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/base.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/default.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/base.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/default.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/chosen/chosen.min.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/artDialog-master/css/ui-dialog.css" />
 <script type="text/javascript" src="<%=basePath%>/javascript/jquery-1.11.1.min.js"></script>
@@ -105,7 +105,7 @@ $(function(){
         </div>
         <div class="msgEditlabel clearfix">
           <div class="halfPart"> <em class="frmLabel">发布时间</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_date} </div>
+            <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_time} </div>
             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
           </div>
         </div>
@@ -118,7 +118,7 @@ $(function(){
         <div class="msgEditlabel clearfix">
           <div class="halfPart"> <em class="frmLabel">所属村居</em>
             <div class="frmInputBox frmInputBoxNoTextLimit">
-              {data.Plan_street}
+              ${data.Plan_street}
             </div>
             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
           </div>

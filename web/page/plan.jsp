@@ -12,8 +12,8 @@
 <meta name="Description" content=""/>
 <meta name="keywords" content=""/>
 <title>青海省征地信息公开系统-拟征收土地公告</title>
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/base.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/default.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/base.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/default.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/chosen/chosen.min.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/artDialog-master/css/ui-dialog.css" />
 <script type="text/javascript" src="<%=basePath%>/javascript/jquery-1.11.1.min.js"></script>
@@ -133,7 +133,7 @@
               <td><a href="<%=basePath%>plan/detail?planid=${obj.Plan_id}" class="heightColor">${obj.Plan_name}</a></td>
               <td>${obj.Plan_docnum}</td>
               <td>${obj.Plan_address}</td>
-              <td>${obj.Plan_date }</td>
+              <td>${obj.Plan_time }</td>
               <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
                 <div class="menuGroupBox">
                   <ul>
@@ -145,22 +145,6 @@
                 </span></td>
             </tr>
             </c:forEach>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
           </table>
         </div>
       </div>
