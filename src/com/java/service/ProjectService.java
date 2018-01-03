@@ -32,12 +32,12 @@ public class ProjectService extends Origin{
         Map map=new HashMap();
         map.put("pageSize",pageSize);
         map.put("pageNum",(currentPage-1)*5);
-        int num=super.sqlSessionTemplate.selectOne("projecetNameSpace.count");
+        int num=super.sqlSessionTemplate.selectOne("projectNameSpace.count");
         int maxPage=(num+(pageSize-1))/pageSize;
         req.setAttribute("maxPage",maxPage);
-        if (sc.getAttribute("projecet")==null){
-            List<Map> data=super.sqlSessionTemplate.selectList("projecetNameSpace.selectprojecet",map);
-            sc.setAttribute("projecet",data);
+        if (sc.getAttribute("project")==null){
+            List<Map> data=super.sqlSessionTemplate.selectList("projectNameSpace.selectproject",map);
+            sc.setAttribute("project",data);
         }
     }
 }

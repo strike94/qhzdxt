@@ -50,7 +50,7 @@ public class Plan extends FileUpload{
         }
         req.setAttribute("pageNum",currentPage);
         service.show(req,currentPage);
-        return new ModelAndView("/page/notice");
+        return new ModelAndView("/page/plan");
     }
     @RequestMapping("detail")
     public ModelAndView detail(String planid){

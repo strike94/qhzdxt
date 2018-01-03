@@ -105,7 +105,7 @@ $(function(){
         </div>
         <div class="msgEditlabel clearfix">
           <div class="halfPart"> <em class="frmLabel">发布时间</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_date} </div>
+            <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_time} </div>
             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
           </div>
         </div>
@@ -118,7 +118,7 @@ $(function(){
         <div class="msgEditlabel clearfix">
           <div class="halfPart"> <em class="frmLabel">所属村居</em>
             <div class="frmInputBox frmInputBoxNoTextLimit">
-              {data.Plan_street}
+              ${data.Plan_street}
             </div>
             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
           </div>
