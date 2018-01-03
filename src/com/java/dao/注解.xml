@@ -51,6 +51,7 @@
     article_userid     法律审核人ID
     article_time       法律审核时间
     article_url        法律相关内容文件URL
+    article_state      法规审核状态
     -->
 
     <!--notice-->
@@ -66,7 +67,8 @@
     notice_docnum               公告文号
     notice_type                 公告类型
     notice_url                  公告文件URL
-    notice_context             公告文件名
+    notice_context              公告文件名
+    notice_state                公告审核状态
     -->
 
     <!--project-->
@@ -100,6 +102,7 @@
     Plan_time          计划审核时间
     Plan_userid        计划审核人ID
     Plan_context       计划文件名称
+    Plan_state         计划审核状态
     -->
 </beans>
 
