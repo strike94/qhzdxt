@@ -14,4 +14,10 @@
     <select id="noticedetail" parameterType="map" resultType="map">
         SELECT * FROM z_notice WHERE notice_id=#{noticeid};
     </select>
+    <select id="selecttype" parameterType="map" resultType="map">
+        SELECT * FROM z_notice WHERE notice_type=#{type} limit #{pageNum},#{pageSize};
+    </select>
+    <select id="typecount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_notice where notice_type=#{type};
+    </select>
 </mapper>

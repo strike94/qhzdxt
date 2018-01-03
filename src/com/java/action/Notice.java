@@ -43,7 +43,7 @@ public class Notice extends FileUpload {
     }
 
     @RequestMapping("/show")
-    public ModelAndView show(HttpServletRequest req,String PageNum){
+    public ModelAndView show(HttpServletRequest req,String PageNum,String type){
         ServletContext sc=req.getSession().getServletContext();
         sc.removeAttribute("notice");
         int currentPage=1;
@@ -51,7 +51,7 @@ public class Notice extends FileUpload {
             currentPage=Integer.parseInt(PageNum);
         }
         req.setAttribute("pageNum",currentPage);
-        service.show(req,currentPage);
+        service.show(req,currentPage,type);
         return new ModelAndView("/page/notice");
     }
 
@@ -62,4 +62,5 @@ public class Notice extends FileUpload {
         map.put("data",data);
         return new ModelAndView("/page/noticeDetail",map);
     }
+
 }

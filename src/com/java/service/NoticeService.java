@@ -27,18 +27,32 @@ public class NoticeService extends Origin{
         return rs;
     }
 
-    public void show(HttpServletRequest req, int currentPage) {
+    public void show(HttpServletRequest req, int currentPage, String type) {
         ServletContext sc=req.getSession().getServletContext();
         int pageSize=5;
         Map map=new HashMap();
+        map.put("type",type);
         map.put("pageSize",pageSize);
         map.put("pageNum",(currentPage-1)*5);
-        int num=super.sqlSessionTemplate.selectOne("noticeNameSpace.count");
-        int maxPage=(num+(pageSize-1))/pageSize;
-        req.setAttribute("maxPage",maxPage);
         if (sc.getAttribute("notice")==null){
-            List<Map> data=super.sqlSessionTemplate.selectList("noticeNameSpace.selectnotice",map);
-            sc.setAttribute("notice",data);
+            if ("all".equals(type) || "".equals(type) || type==null){
+                int num=super.sqlSessionTemplate.selectOne("noticeNameSpace.count");
+                int maxPage=(num+(pageSize-1))/pageSize;
+                req.setAttribute("maxPage",maxPage);
+                List<Map> data=super.sqlSessionTemplate.selectList("noticeNameSpace.selectnotice",map);
+                sc.setAttribute("notice",data);
+            }else {
+                int maxPage;
+                int num=super.sqlSessionTemplate.selectOne("noticeNameSpace.typecount");
+                if (num==0){
+                    maxPage=1;
+                }else {
+                    maxPage=(num+(pageSize-1))/pageSize;
+                }
+                req.setAttribute("maxPage",maxPage);
+                List<Map> data=super.sqlSessionTemplate.selectList("noticeNameSpace.selecttype",map);
+                sc.setAttribute("notice",data);
+            }
         }
     }
 
@@ -48,4 +62,5 @@ public class NoticeService extends Origin{
         Map data=super.sqlSessionTemplate.selectOne("noticeNameSpace.noticedetail",map);
         return data;
     }
+
 }
