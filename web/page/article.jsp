@@ -12,8 +12,8 @@
 <meta name="Description" content=""/>
 <meta name="keywords" content=""/>
 <title>青海省征地信息公开系统-拟征收土地公告</title>
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/base.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/default.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/base.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/default.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/chosen/chosen.min.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/artDialog-master/css/ui-dialog.css" />
 <script type="text/javascript" src="<%=basePath%>/javascript/jquery-1.11.1.min.js"></script>
