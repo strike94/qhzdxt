@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -19,8 +20,8 @@
 <meta name="Description" content=""/>
 <meta name="keywords" content=""/>
 <title>青海省征地信息公开系统</title>
-<link type="text/css" rel="stylesheet" href="<%=basePath %>/themes/base.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath %>/themes/default.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath %>/themes/css/base.css" />
+<link type="text/css" rel="stylesheet" href="<%=basePath %>/themes/css/default.css" />
 <link type="text/css" rel="stylesheet" href="<%=basePath %>/javascript/chosen/chosen.min.css" />
 <script type="text/javascript" src="<%=basePath %>/javascript/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="<%=basePath %>/javascript/chosen/chosen.jquery.min.js"></script>
@@ -97,74 +98,76 @@ function showDetaile(obj){
       <li><a href="setting.html" class="active end"><i></i><span>系统管理</span></a></li>
     </ul>
   </div>
-  <div class="wrp hasleft">
-    <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">系统管理</a><b class="partLine grayColor">/</b><b>添加用户</b></span></div>
-    <div class="pulicBox clearfix">
-      <div class="newArticle" style="padding-top:0;">
-        <div class="tipsInforBlock">新增用户默认密码均为:123456</div>
-        <div class="msgEditlabel clearfix">
-          <div class="halfPart"> <em class="frmLabel">账号名称</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit"> ABC123456 </div>
-            <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
-          </div>
-          <div class="halfPart"> <em class="frmLabel">状态</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit"> 正常 </div>
-            <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
-          </div>
-        </div>
-        <div class="msgEditlabel clearfix">
-          <div class="halfPart"> <em class="frmLabel">姓名</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit"> 文超 </div>
-            <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
-          </div>
-          <div class="halfPart"> <em class="frmLabel">所属单位</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit"> 国土所 </div>
-          </div>
-        </div>
-        <div class="msgEditlabel clearfix">
-          <div class="halfPart"> <em class="frmLabel">邮箱</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit">
-              <input type="text" class="textInput"/>
+  <form action="<%=basePath%>user/new" method="post" enctype="multipart/form-data">
+    <div class="wrp hasleft">
+      <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">系统管理</a><b class="partLine grayColor">/</b><b>添加用户</b></span></div>
+      <div class="pulicBox clearfix">
+        <div class="newArticle" style="padding-top:0;">
+          <div class="tipsInforBlock">新增用户默认密码均为:123456</div>
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart"> <em class="frmLabel">账号名称</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> ABC123456 </div>
+              <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
+            </div>
+            <div class="halfPart"> <em class="frmLabel">状态</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> 正常 </div>
+              <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
-          <div class="halfPart halfPartEnd"> <em class="frmLabel">联系电话</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit">
-              <input type="text" class="textInput" />
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart"> <em class="frmLabel">姓名</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> 文超 </div>
+              <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
+            </div>
+            <div class="halfPart"> <em class="frmLabel">所属单位</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> 国土所 </div>
+            </div>
+          </div>
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart"> <em class="frmLabel">邮箱</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit">
+                <input type="text" class="textInput"/>
+              </div>
+            </div>
+            <div class="halfPart halfPartEnd"> <em class="frmLabel">联系电话</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit">
+                <input type="text" class="textInput" />
+              </div>
+            </div>
+          </div>
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart halfPartEnd"> <em class="frmLabel">联系地址</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit">
+                <input type="text" class="textInput" />
+              </div>
+            </div>
+          </div>
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart halfPartEnd"> <em class="frmLabel">用户角色</em>
+              <div class="frmSelectBox frmInputBoxNoTextLimit dropDown">
+                <select data-placeholder="可选择多个角色" class="chosen-select" multiple tabindex="4">
+                  <option value=""></option>
+                  <option value="United States">县级发布人员</option>
+                  <option value="United Kingdom">州级发布人员</option>
+                  <option value="Afghanistan">省级发布人员</option>
+                  <option value="Aland Islands">超级管理员</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="msgEditlabel"> <em class="frmLabel">备注<b class="aboutMsg"></b></em>
+            <div class="frmAreaBox">
+              <textarea name="" cols="" rows=""></textarea>
             </div>
           </div>
         </div>
-        <div class="msgEditlabel clearfix">
-          <div class="halfPart halfPartEnd"> <em class="frmLabel">联系地址</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit">
-              <input type="text" class="textInput" />
-            </div>
-          </div>
+        <div class="ctrlBar">
+          <button class="ctrlBtn">取消</button>
+          <button class="ctrlBtn focusBtn">保存</button>
         </div>
-        <div class="msgEditlabel clearfix">
-          <div class="halfPart halfPartEnd"> <em class="frmLabel">用户角色</em>
-            <div class="frmSelectBox frmInputBoxNoTextLimit dropDown">
-              <select data-placeholder="可选择多个角色" class="chosen-select" multiple tabindex="4">
-                <option value=""></option>
-                <option value="United States">县级发布人员</option>
-                <option value="United Kingdom">州级发布人员</option>
-                <option value="Afghanistan">省级发布人员</option>
-                <option value="Aland Islands">超级管理员</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="msgEditlabel"> <em class="frmLabel">备注<b class="aboutMsg"></b></em>
-          <div class="frmAreaBox">
-            <textarea name="" cols="" rows=""></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="ctrlBar">
-        <button class="ctrlBtn">取消</button>
-        <button class="ctrlBtn focusBtn">保存</button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 <script type="text/javascript">
     var config = {
