@@ -86,7 +86,7 @@
     </div>
     <div class="wrp hasleft clearfix">
         <div class="subTab Margin30">
-            <div class="subTabInner"><a href="allnotice.html" class="active"><em>全部</em><b></b></a><a href="notice.html"><em>拟征收土地公告</em><b></b></a><a href="plan.jsp"><em>拟征收土地补偿安置方案公告</em><b></b></a></div>
+            <div class="subTabInner"><a href="<%=basePath%>notice/show?type=all" class="active"><em>全部</em><b></b></a><a href="<%=basePath%>notice/show?type=拟征收土地公告"><em>拟征收土地公告</em><b></b></a><a href="<%=basePath%>notice/show?type=拟征收土地补偿安置方案公告"><em>拟征收土地补偿安置方案公告</em><b></b></a></div>
         </div>
         <!--<h2 class="wrpTitle"><em>拟征收土地公告</em> <b class="reportType">项目审批前</b></h2>-->
         <div class="functionBar clearfix">
@@ -157,7 +157,7 @@
                 <li class="gotoPage">
                     <input type="text">
                     <a class="pageBtn">跳转</a> </li>
-                <li> <a class="pageBtn nextPage" href="<%=basePath%>notice/show?PageNum=${requestScope.pageNum+1}">><i class="arrow"></i></a> </li>
+                <li> <a class="pageBtn nextPage" href="<%=basePath%>notice/show?PageNum=${requestScope.pageNum+1}"><i class="arrow"></i></a> </li>
                 <li> <span class="pageNum"><em class="cur">${requestScope.pageNum}</em><em class="integral">/</em><em class="all">${requestScope.maxPage}</em></span> </li>
                 <li> <a class="pageBtn prevPage" href="<%=basePath%>notice/show?PageNum=${requestScope.pageNum-1}"><i class="arrow"></i></a> </li>
             </ul>
