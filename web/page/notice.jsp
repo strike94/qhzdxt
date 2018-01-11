@@ -53,6 +53,35 @@
                     d.content(elem).showModal();
                 });
         });
+
+
+        var type=null;
+        function typechange(x) {
+            if (x==1){
+                type="拟征收土地公告";
+            }else if (x==2){
+                type="拟征收土地补偿安置方案公告";
+            }else {
+                type="";
+
+            }
+            $("#type").val(type);
+            document.forms[0].submit();
+            alert(document.getElementById("type").value)
+        }
+        function tt(y) {
+            if (y==1){
+                $("#page").val("next");
+                document.forms[0].submit();
+            }else if (y==2) {
+                $("#page").val("prev");
+                document.forms[0].submit();
+            }
+            alert(document.getElementById("page").value)
+        }
+        function xxx() {
+            document.forms[0].submit();
+        }
     </script>
 </head>
 
@@ -84,36 +113,38 @@
             <li><a href="notice.html" class="end"><i></i><span>已发布公告</span></a></li>
         </ul>
     </div>
+    <form action="<%=basePath%>notice/show" method="get">
     <div class="wrp hasleft clearfix">
         <div class="subTab Margin30">
-            <div class="subTabInner"><a href="<%=basePath%>notice/show?type=all" class="active"><em>全部</em><b></b></a><a href="<%=basePath%>notice/show?type=拟征收土地公告"><em>拟征收土地公告</em><b></b></a><a href="<%=basePath%>notice/show?type=拟征收土地补偿安置方案公告"><em>拟征收土地补偿安置方案公告</em><b></b></a></div>
+            <div class="subTabInner"><a class="active" onclick="typechange(0)"><em>全部</em><b></b></a><a  onclick="typechange(1)"><em>拟征收土地公告</em><b></b></a><a onclick="typechange(2)"><em>拟征收土地补偿安置方案公告</em><b></b></a>
+            <input type="hidden" id="type" name="type" value="${requestScope.type}"></div>
         </div>
         <!--<h2 class="wrpTitle"><em>拟征收土地公告</em> <b class="reportType">项目审批前</b></h2>-->
         <div class="functionBar clearfix">
             <div class="selectionGroup">
                 <div class="dropDown"  style="width:120px;">
-                    <select data-placeholder="所属区县" class="chosen-select-no-single" tabindex="9">
+                    <select data-placeholder="所属区县" class="chosen-select-no-single" tabindex="9" name="local1">
                         <option value=""></option>
-                        <option value="United States">全部</option>
-                        <option value="United States">已发布</option>
-                        <option value="United States">未发布</option>
+                        <option value="全部">全部</option>
+                        <option value="已发布">已发布</option>
+                        <option value="未发布">未发布</option>
                     </select>
                 </div>
             </div>
             <div class="selectionGroup">
                 <div class="dropDown"  style="width:120px;">
-                    <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9">
+                    <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9" name="local2">
                         <option value=""></option>
-                        <option value="United States">全部</option>
-                        <option value="United States">已发布</option>
-                        <option value="United States">未发布</option>
+                        <option value="全部">全部</option>
+                        <option value="已发布">已发布</option>
+                        <option value="未发布">未发布</option>
                     </select>
                 </div>
             </div>
             <div class="queryGroup"> <span class="searchBox">
-        <input type="text" placeholder="请输入公告名称或文号的关键字" class="searchMain">
+        <input type="text" placeholder="请输入公告名称或文号的关键字" class="searchMain" name="docNum">
         <a href="javascript:;" class="removeText"><i></i></a>
-        <button class="searchBtn"><i></i></button>
+        <button class="searchBtn" type="submit"><i></i></button>
         </span> </div>
         </div>
         <div class="dataWrap">
@@ -155,14 +186,16 @@
             </div>
             <ul class="pagination">
                 <li class="gotoPage">
-                    <input type="text">
-                    <a class="pageBtn">跳转</a> </li>
-                <li> <a class="pageBtn nextPage" href="<%=basePath%>notice/show?PageNum=${requestScope.pageNum+1}"><i class="arrow"></i></a> </li>
+                    <input type="text" id="pageTo" name="pageTo">
+                    <a class="pageBtn" onclick="xxx()">跳转</a> </li>
+                <li> <a class="pageBtn nextPage" onclick="tt(1)"><i class="arrow"></i></a> </li>
                 <li> <span class="pageNum"><em class="cur">${requestScope.pageNum}</em><em class="integral">/</em><em class="all">${requestScope.maxPage}</em></span> </li>
-                <li> <a class="pageBtn prevPage" href="<%=basePath%>notice/show?PageNum=${requestScope.pageNum-1}"><i class="arrow"></i></a> </li>
+                <li> <a class="pageBtn prevPage" onclick="tt(2)"><i class="arrow"></i></a> </li>
             </ul>
+            <input type="hidden" name="page" id="page">
         </div>
     </div>
+    </form>
 </div>
 <div class="confirmBox hide" id="confirmBox">
     <div class="uplayoutBox">
