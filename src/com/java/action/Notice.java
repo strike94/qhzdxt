@@ -57,7 +57,7 @@ public class Notice extends FileUpload {
         if ("prev".equals(page)){
             currentPage--;
         }
-        if (pageTo!=null){
+        if (pageTo!=null && !"".equals(pageTo)){
             currentPage=Integer.parseInt(pageTo);
         }
         if (currentPage<1){

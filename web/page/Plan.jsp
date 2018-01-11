@@ -111,7 +111,7 @@
     <div class="wrp hasleft clearfix">
       <div class="subTab Margin30">
         <div class="subTabInner"><a class="active" onclick="typechange(0)"><em>全部</em><b></b></a><a  onclick="typechange(1)"><em>拟征收土地公告</em><b></b></a><a onclick="typechange(2)"><em>拟征收土地补偿安置方案公告</em><b></b></a>
-          <input type="hidden" id="type" name="type" value="${requestScope.type}"></div>
+          </div>
       </div>
       <!--<h2 class="wrpTitle"><em>拟征收土地公告</em> <b class="reportType">项目审批前</b></h2>-->
       <div class="functionBar clearfix">
