@@ -3,12 +3,38 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="projectNameSpace">
     <insert id="addproject" parameterType="map">
-         INSERT INTO z_project(project_userid,project_name,project_time,project_passtime,project_docnum,project_address,project_street,project_type,project_url,project_context,project_state) VALUES (#{z_userid},#{z_name},#{z_time},#{z_passtime},#{z_docnum},#{local},#{add},#{type},#{url},#{filename},#{state});
-    </insert>
-    <select id="count" resultType="java.lang.Integer">
-        SELECT COUNT(*) FROM z_project;
-    </select>
+    INSERT INTO z_project(project_userid,project_name,project_time,project_passtime,project_docnum,project_address,project_street,project_type,project_url,project_context,project_state) VALUES (#{z_userid},#{z_name},#{z_time},#{z_passtime},#{z_docnum},#{local},#{add},#{type},#{url},#{filename},#{state});
+</insert>
+
     <select id="selectproject" parameterType="map" resultType="map">
-        SELECT * FROM z_project limit #{pageNum},#{pageSize};
+        SELECT * FROM z_project
+        <where>
+            <if test="type!=null and type != '' ">
+                project_type=#{type}
+            </if>
+            <if test="local1!=null and local1 != '' ">
+                AND project_local1 =#{local1}
+            </if>
+            <if test="local2!=null and local2 !='' ">
+                AND project_local2=#{local2}
+            </if>
+        </where>
+        limit #{pageNum},#{pageSize};
     </select>
+
+    <select id="typecount" resultType="java.lang.Integer" parameterType="map">
+        SELECT COUNT(*) FROM z_project
+        <where>
+            <if test="type!=null and type != '' ">
+                project_type=#{type}
+            </if>
+            <if test="local1!=null and local1 != '' ">
+                and project_local1 =#{local1}
+            </if>
+            <if test="local2!=null and local2 !='' ">
+                and project_local2=#{local2}
+            </if>
+        </where>
+    </select>
+
 </mapper>

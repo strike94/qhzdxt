@@ -5,13 +5,39 @@
     <insert id="addplan" parameterType="map">
          INSERT INTO z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_address,Plan_street,Plan_time,Plan_url,Plan_context) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local},#{address},#{Plan_time},#{url},#{filename});
     </insert>
-    <select id="count" resultType="java.lang.Integer">
-        SELECT COUNT(*) FROM z_Plan;
+
+    <select id="selectPlan" parameterType="map" resultType="map">
+        SELECT * FROM z_Plan
+        <where>
+            <if test="type!=null and type != '' ">
+                Plan_type=#{type}
+            </if>
+            <if test="local1!=null and local1 != '' ">
+                AND Plan_local1 =#{local1}
+            </if>
+            <if test="local2!=null and local2 !='' ">
+                AND Plan_local2=#{local2}
+            </if>
+        </where>
+        limit #{pageNum},#{pageSize};
     </select>
-    <select id="selectplan" parameterType="map" resultType="map">
-        SELECT * FROM z_Plan limit #{pageNum},#{pageSize};
-    </select>
+
     <select id="plandetail" parameterType="map" resultType="map">
         SELECT * FROM z_Plan WHERE Plan_id=#{planid};
+    </select>
+
+    <select id="typecount" resultType="java.lang.Integer" parameterType="map">
+        SELECT COUNT(*) FROM z_Plan
+        <where>
+            <if test="type!=null and type != '' ">
+                Plan_type=#{type}
+            </if>
+            <if test="local1!=null and local1 != '' ">
+                and Plan_local1 =#{local1}
+            </if>
+            <if test="local2!=null and local2 !='' ">
+                and Plan_local2=#{local2}
+            </if>
+        </where>
     </select>
 </mapper>

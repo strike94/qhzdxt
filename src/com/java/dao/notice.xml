@@ -5,6 +5,7 @@
     <insert id="addnotice" parameterType="map">
          INSERT INTO z_notice(notice_name,notice_date,notice_userid,notice_address,notice_street,notice_docnum,notice_type,notice_url,notice_context) VALUES (#{name},#{date},#{g_userid},#{local},#{address},#{docnum},#{type},#{url},#{filename});
     </insert>
+
     <select id="selectnotice" parameterType="map" resultType="map">
         SELECT * FROM z_notice
         <where>
@@ -20,9 +21,11 @@
         </where>
         limit #{pageNum},#{pageSize};
     </select>
+
     <select id="noticedetail" parameterType="map" resultType="map">
         SELECT * FROM z_notice WHERE notice_id=#{noticeid};
     </select>
+
     <select id="typecount" resultType="java.lang.Integer" parameterType="map">
         SELECT COUNT(*) FROM z_notice
         <where>
@@ -37,4 +40,5 @@
             </if>
         </where>
     </select>
+
 </mapper>

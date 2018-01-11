@@ -39,16 +39,32 @@ public class Project extends FileUpload{
         }
         return null;
     }
+    
     @RequestMapping("/show")
-    public ModelAndView show(HttpServletRequest req,String PageNum){
+    public ModelAndView show(HttpServletRequest req,String pageTo,String type,String local1,String local2,String page){
         ServletContext sc=req.getSession().getServletContext();
         sc.removeAttribute("project");
         int currentPage=1;
-        if (PageNum!=null && !"".equals(PageNum)){
-            currentPage=Integer.parseInt(PageNum);
+        if (req.getAttribute("pageNum")!=null){
+            currentPage= (int) req.getAttribute("pageNum");
+
+        }
+        if ("next".equals(page)){
+            currentPage++;
+        }
+        if ("prev".equals(page)){
+            currentPage--;
+        }
+        if (pageTo!=null){
+            currentPage=Integer.parseInt(pageTo);
+        }
+        if (currentPage<1){
+            currentPage=1;
         }
         req.setAttribute("pageNum",currentPage);
-        service.show(req,currentPage);
+        req.setAttribute("type",type);
+        service.show(req,currentPage,type,local1,local2);
         return new ModelAndView("/page/project");
     }
+
 }

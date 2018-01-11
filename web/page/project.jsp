@@ -19,34 +19,63 @@
 <script type="text/javascript" src="<%=basePath%>javascript/common.js"></script>
 <script type="text/javascript" src="<%=basePath%>javascript/chosen/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>javascript/artDialog-master/dist/dialog-plus-min.js"></script>
-<script type="text/javascript">
-    function checkboxSelect(obj){
-        if($(obj).hasClass("selected")){
-            $(obj).removeClass("selected");
-            $("input",$(obj)).attr("checked",false);
-        }
-        else{
-            $(obj).addClass("selected");
-            $("input",$(obj)).attr("checked", "checked");
-        }
-    }
-    $(function(){
-        $('.delPlan').on('click',
-            function() {
-                var d = dialog({
-                    title: '删除确认',
-                    content: '',
-                    cancelValue: '取消',
-                    okValue: '确定',
-                    ok: function() {},
+  <script type="text/javascript">
+      function checkboxSelect(obj){
+          if($(obj).hasClass("selected")){
+              $(obj).removeClass("selected");
+              $("input",$(obj)).attr("checked",false);
+          }
+          else{
+              $(obj).addClass("selected");
+              $("input",$(obj)).attr("checked", "checked");
+          }
+      }
+      $(function(){
+          $('.delPlan').on('click',
+              function() {
+                  var d = dialog({
+                      title: '删除确认',
+                      content: '',
+                      cancelValue: '取消',
+                      okValue: '确定',
+                      ok: function() {},
 
-                    cancel: function() {}
-                });
-                var elem = $("#confirmBox");
-                d.content(elem).showModal();
-            });
-    });
-</script>
+                      cancel: function() {}
+                  });
+                  var elem = $("#confirmBox");
+                  d.content(elem).showModal();
+              });
+      });
+
+
+      var type=null;
+      function typechange(x) {
+          if (x==1){
+              type="拟征收土地公告";
+          }else if (x==2){
+              type="拟征收土地补偿安置方案公告";
+          }else {
+              type="";
+
+          }
+          $("#type").val(type);
+          document.forms[0].submit();
+          alert(document.getElementById("type").value)
+      }
+      function tt(y) {
+          if (y==1){
+              $("#page").val("next");
+              document.forms[0].submit();
+          }else if (y==2) {
+              $("#page").val("prev");
+              document.forms[0].submit();
+          }
+          alert(document.getElementById("page").value)
+      }
+      function xxx() {
+          document.forms[0].submit();
+      }
+  </script>
 </head>
 
 <body>
@@ -78,95 +107,89 @@
       <li><a href="project.jsp" class="end"><i></i><span>已发布项目</span></a></li>
     </ul>
   </div>
-  <div class="wrp hasleft clearfix">
-
-    <div class="functionBar clearfix">
-      <div class="selectionGroup">
-        <div class="dropDown"  style="width:90px;">
-          <select data-placeholder="市、州" class="chosen-select-no-single" tabindex="9">
-            <option value=""></option>
-            <option value="United States">所有</option>
-            <option value="United States">已发布</option>
-            <option value="United States">未发布</option>
-          </select>
-        </div>
+  <form action="<%=basePath%>project/show" method="get">
+    <div class="wrp hasleft clearfix">
+      <div class="subTab Margin30">
+        <div class="subTabInner"><a class="active" onclick="typechange(0)"><em>全部</em><b></b></a><a  onclick="typechange(1)"><em>拟征收土地公告</em><b></b></a><a onclick="typechange(2)"><em>拟征收土地补偿安置方案公告</em><b></b></a>
+          <input type="hidden" id="type" name="type" value="${requestScope.type}"></div>
       </div>
-      <div class="selectionGroup">
-        <div class="dropDown"  style="width:120px;">
-          <select data-placeholder="所在区" class="chosen-select-no-single" tabindex="9">
-            <option value=""></option>
-            <option value="United States">全部</option>
-            <option value="United States">已发布</option>
-            <option value="United States">未发布</option>
-          </select>
+      <!--<h2 class="wrpTitle"><em>拟征收土地公告</em> <b class="reportType">项目审批前</b></h2>-->
+      <div class="functionBar clearfix">
+        <div class="selectionGroup">
+          <div class="dropDown"  style="width:120px;">
+            <select data-placeholder="所属区县" class="chosen-select-no-single" tabindex="9" name="local1">
+              <option value=""></option>
+              <option value="全部">全部</option>
+              <option value="已发布">已发布</option>
+              <option value="未发布">未发布</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="selectionGroup">
-        <div class="dropDown"  style="width:120px;">
-          <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9">
-            <option value=""></option>
-            <option value="United States">全部</option>
-            <option value="United States">已发布</option>
-            <option value="United States">未发布</option>
-          </select>
+        <div class="selectionGroup">
+          <div class="dropDown"  style="width:120px;">
+            <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9" name="local2">
+              <option value=""></option>
+              <option value="全部">全部</option>
+              <option value="已发布">已发布</option>
+              <option value="未发布">未发布</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="queryGroup"> <span class="searchBox">
-        <input type="text" placeholder="请输入公告名称或文号的关键字" class="searchMain">
+        <div class="queryGroup"> <span class="searchBox">
+        <input type="text" placeholder="请输入公告名称或文号的关键字" class="searchMain" name="docNum">
         <a href="javascript:;" class="removeText"><i></i></a>
-        <button class="searchBtn"><i></i></button>
+        <button class="searchBtn" type="submit"><i></i></button>
         </span> </div>
-      
-    </div>
-    <div class="dataWrap">
-      <div class="dataGrid">
-        <div class="gridMain">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <th><span class="btnChose ctrlChosen" onclick="checkboxSelect(this)">
+      </div>
+      <div class="dataWrap">
+        <div class="dataGrid">
+          <div class="gridMain">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th><span class="btnChose ctrlChosen" onclick="checkboxSelect(this)">
                 <input name="" type="checkbox" checked="checked" value="" />
                 <i></i><em>全选</em></span></th>
-              <th>项目名称</th>
-              <th>批准文号</th>
-              <th>项目位置</th>
-              <th>批准年度</th>
-              <th>状态</th>
-              <th>操作</th>
-            </tr>
-            <c:forEach items="${applicationScope.project}" var="obj">
-             <tr>
-                <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
-                  <input name="" type="checkbox" value="" />
-                  <i></i></span></td>
-                <td><a href="projectDetail03.html" class="heightColor">${obj.project_name}</a></td>
-                <td>${obj.project_docnum}</td>
-                <td>${obj.project_address}</td>
-                <td>${obj.project_passtime }</td>
-                <td>${obj.project_state}</td>
-                <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
-                  <div class="menuGroupBox">
-                    <ul>
-                      <li><a href="projectDetail03.html">详情</a></li>
-                      <li><a href="javascript:;">发布</a></li>
-                      <li><a href="javascript:;" class="delPlan">删除</a></li>
-                    </ul>
-                  </div>
-                  </span></td>
+                <th>公告名称</th>
+                <th>文号</th>
+                <th>项目位置</th>
+                <th>公告日期</th>
+                <th>操作</th>
               </tr>
-            </c:forEach>
-          </table>
+              <c:forEach items="${applicationScope.project}" var="obj">
+                <tr>
+                  <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
+                <input name="" type="checkbox" value="" />
+                <i></i></span></td>
+                  <td><a href="<%=basePath%>project/detail?projectid=${obj.project_id}" class="heightColor">${obj.project_name}</a></td>
+                  <td>${obj.project_docnum}</td>
+                  <td>${obj.project_local1}${obj.project_local2}${obj.project_local3}</td>
+                  <td>${obj.project_date }</td>
+                  <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
+                <div class="menuGroupBox">
+                  <ul>
+                    <li><a href="projectDetail.html">详情</a></li>
+                    <li><a href="javascript:;">发布</a></li>
+                    <li><a href="javascript:;" class="delPlan">删除</a></li>
+                  </ul>
+                </div>
+                </span></td>
+                </tr>
+              </c:forEach>
+            </table>
+          </div>
         </div>
+        <ul class="pagination">
+          <li class="gotoPage">
+            <input type="text" id="pageTo" name="pageTo">
+            <a class="pageBtn" onclick="xxx()">跳转</a> </li>
+          <li> <a class="pageBtn nextPage" onclick="tt(1)"><i class="arrow"></i></a> </li>
+          <li> <span class="pageNum"><em class="cur">${requestScope.pageNum}</em><em class="integral">/</em><em class="all">${requestScope.maxPage}</em></span> </li>
+          <li> <a class="pageBtn prevPage" onclick="tt(2)"><i class="arrow"></i></a> </li>
+        </ul>
+        <input type="hidden" name="page" id="page">
       </div>
-      <ul class="pagination">
-        <li class="gotoPage">
-          <input type="text">
-          <a class="pageBtn">跳转</a> </li>
-        <li> <a class="pageBtn nextPage" href="<%=basePath%>project/show?PageNum=${requestScope.pageNum+1}">><i class="arrow"></i></a> </li>
-        <li> <span class="pageNum"><em class="cur">${requestScope.pageNum}</em><em class="integral">/</em><em class="all">${requestScope.maxPage}</em></span> </li>
-        <li> <a class="pageBtn prevPage" href="<%=basePath%>project/show?PageNum=${requestScope.pageNum-1}"><i class="arrow"></i></a> </li>
-      </ul>
     </div>
-  </div>
+  </form>
 </div>
 <div class="confirmBox hide" id="confirmBox">
   <div class="uplayoutBox">

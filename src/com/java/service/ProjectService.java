@@ -1,6 +1,7 @@
 package com.java.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -26,18 +27,29 @@ public class ProjectService extends Origin{
         int rs=super.sqlSessionTemplate.insert("projectNameSpace.addproject",map);
         return rs;
     }
-    public void show(HttpServletRequest req, int currentPage) {
+
+    public void show(HttpServletRequest req, int currentPage, String type, String local1, String local2) {
         ServletContext sc=req.getSession().getServletContext();
         int pageSize=5;
         Map map=new HashMap();
+        map.put("type",type);
         map.put("pageSize",pageSize);
         map.put("pageNum",(currentPage-1)*5);
-        int num=super.sqlSessionTemplate.selectOne("projectNameSpace.count");
-        int maxPage=(num+(pageSize-1))/pageSize;
-        req.setAttribute("maxPage",maxPage);
+        map.put("local1",local1);
+        map.put("local2",local2);
+        req.removeAttribute("maxPage");
         if (sc.getAttribute("project")==null){
+            int maxPage;
+            int num=super.sqlSessionTemplate.selectOne("projectNameSpace.typecount",map);
+            if (num==0){
+                maxPage=1;
+            }else {
+                maxPage=(num+(pageSize-1))/pageSize;
+            }
+            req.setAttribute("maxPage",maxPage);
             List<Map> data=super.sqlSessionTemplate.selectList("projectNameSpace.selectproject",map);
             sc.setAttribute("project",data);
         }
     }
+    
 }

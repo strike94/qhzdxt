@@ -5,9 +5,11 @@
     <insert id="addarticle" parameterType="map">
          INSERT INTO z_article(article_name,article_time,article_context,article_type,article_userid) VALUES (#{name},#{date},#{content},#{type},#{userid});
     </insert>
+
     <select id="count" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM z_article;
     </select>
+
     <select id="selectarticle" parameterType="map" resultType="map">
         SELECT * FROM z_article z1 JOIN z_user z2  ON z1.`s_userid`=z2.`userid` LIMIT #{pageNum},#{pageSize};
     </select>
