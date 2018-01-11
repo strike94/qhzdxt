@@ -111,7 +111,7 @@ $(function(){
         </div>
         <div class="msgEditlabel clearfix">
           <div class="halfPart"> <em class="frmLabel">项目位置</em>
-            <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.Plan_address}</div>
+            <div class="frmInputBox frmInputBoxNoTextLimit"> >${obj.Plan_local1}${obj.Plan_local2}${obj.Plan_local3} </div>
             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>--> 
           </div>
         </div>
