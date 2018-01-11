@@ -99,7 +99,7 @@
             </div>
 
         </div>
-        <form action="<%=basePath %>plan/addplan" method="post" enctype="multipart/form-data">
+        <form action="<%=basePath %>Plan/addPlan" method="post" enctype="multipart/form-data">
         <div class="pulicBox">
             <div class="newArticle">
                 <div class="msgEditlabel clearfix">
@@ -191,7 +191,7 @@
         </div>
         <div class="ctrlBar">
             <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-            <button class="ctrlBtn focusBtn" onClick="javascript:location.href='plan.jsp'">保存</button>
+            <button class="ctrlBtn focusBtn" onClick="javascript:location.href='Plan.jsp'">保存</button>
             <button class="ctrlBtn focusBtn" type="submit">保存并送审</button>
         </div>
         </form>

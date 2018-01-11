@@ -19,12 +19,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("plan")
+@RequestMapping("Plan")
 public class Plan extends FileUpload{
     @Autowired
     PlanService service;
 
-    @RequestMapping(value = "addplan",method = RequestMethod.POST)
+    @RequestMapping(value = "addPlan",method = RequestMethod.POST)
     public ModelAndView addPlan(HttpServletRequest req,String name,String docnum,String date,String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file){
         String local=local1+local2+local3;
         HttpSession session=req.getSession();
@@ -65,14 +65,14 @@ public class Plan extends FileUpload{
         req.setAttribute("pageNum",currentPage);
         req.setAttribute("type",type);
         service.show(req,currentPage,type,local1,local2);
-        return new ModelAndView("/page/Plan");
+        return new ModelAndView("page/Plan");
     }
 
     @RequestMapping("detail")
-    public ModelAndView detail(String planid){
-        Map data=service.detail(planid);
+    public ModelAndView detail(String Planid){
+        Map data=service.detail(Planid);
         Map map=new HashMap();
         map.put("data",data);
-        return new ModelAndView("/page/planDetail",map);
+        return new ModelAndView("/page/PlanDetail",map);
     }
 }

@@ -101,10 +101,10 @@
 <div class="content">
   <div class="menu">
     <ul>
-      <li><a href="plan.jsp" class="all"><i></i><span>所有公告</span></a></li>
-      <li><a href="plan.jsp" class="active"><i></i><span>待办公告</span></a></li>
-      <li><a href="plan.jsp"><i></i><span>待审核公告</span></a></li>
-      <li><a href="plan.jsp" class="end"><i></i><span>已发布公告</span></a></li>
+      <li><a href="Plan.jsp" class="all"><i></i><span>所有公告</span></a></li>
+      <li><a href="Plan.jsp" class="active"><i></i><span>待办公告</span></a></li>
+      <li><a href="Plan.jsp"><i></i><span>待审核公告</span></a></li>
+      <li><a href="Plan.jsp" class="end"><i></i><span>已发布公告</span></a></li>
     </ul>
   </div>
   <form action="<%=basePath%>Plan/show" method="get">
@@ -223,7 +223,7 @@
         <div class="messageBlock">
         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.jsp">立即处理</a>
+        <a class="messageTodo" href="Plan.jsp">立即处理</a>
         </div>
       </li>
       <li class="messageItem">
@@ -231,7 +231,7 @@
         <div class="messageBlock">
         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.jsp">立即处理</a>
+        <a class="messageTodo" href="Plan.jsp">立即处理</a>
         </div>
       </li>
       <li class="messageItem">
@@ -239,7 +239,7 @@
         <div class="messageBlock">
         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.jsp">立即处理</a>
+        <a class="messageTodo" href="Plan.jsp">立即处理</a>
         </div>
       </li>
     </ul><div class="loadMore">

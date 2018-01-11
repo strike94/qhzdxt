@@ -229,7 +229,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.jsp">立即处理</a>
+                        <a class="messageTodo" href="Plan.jsp">立即处理</a>
                     </div>
                 </li>
                 <li class="messageItem">
@@ -237,7 +237,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.jsp">立即处理</a>
+                        <a class="messageTodo" href="Plan.jsp">立即处理</a>
                     </div>
                 </li>
                 <li class="messageItem">
@@ -245,7 +245,7 @@
                     <div class="messageBlock">
                         <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
                         <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-                        <a class="messageTodo" href="plan.jsp">立即处理</a>
+                        <a class="messageTodo" href="Plan.jsp">立即处理</a>
                     </div>
                 </li>
             </ul><div class="loadMore">

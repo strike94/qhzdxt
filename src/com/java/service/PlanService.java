@@ -20,7 +20,7 @@ public class PlanService extends Origin{
         map.put("Plan_time",date);
         map.put("url",filepath);
         map.put("filename",filename);
-        int rs=super.sqlSessionTemplate.insert("planNameSpace.addplan",map);
+        int rs=super.sqlSessionTemplate.insert("PlanNameSpace.addPlan",map);
         return rs;
     }
     public void show(HttpServletRequest req, int currentPage, String type, String local1, String local2) {
@@ -48,10 +48,10 @@ public class PlanService extends Origin{
     }
     
     
-    public Map detail(String planid) {
+    public Map detail(String Planid) {
         Map map=new HashMap();
-        map.put("planid",planid);
-        Map data=super.sqlSessionTemplate.selectOne("planNameSpace.plandetail",map);
+        map.put("Planid",Planid);
+        Map data=super.sqlSessionTemplate.selectOne("PlanNameSpace.Plandetail",map);
         return data;
     }
 }
