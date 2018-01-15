@@ -25,14 +25,13 @@ public class Project extends FileUpload{
 
     @RequestMapping(value = "add",method = RequestMethod.POST)
     public ModelAndView addProject(HttpServletRequest req,String name,String date,String accessdate,String local1,String local2,String local3,String address,String type,String docnum,@RequestParam("file") MultipartFile file){
-        String local=local1+local2+local3;
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
         Map map=fileUpload(req,file);
         String filepath= (String) map.get("filePath");
         String filename= (String) map.get("fileName");
-        int rs=service.addProject(userid,name,date,accessdate,local,address,type,docnum,filepath,filename);
+        int rs=service.addProject(userid,name,date,accessdate,local1,local2,local3,address,type,docnum,filepath,filename);
         if (rs==1){
             System.out.println("数据录入成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));

@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="projectNameSpace">
     <insert id="addproject" parameterType="map">
-    INSERT INTO z_project(project_userid,project_name,project_time,project_passtime,project_docnum,project_address,project_street,project_type,project_url,project_context,project_state) VALUES (#{z_userid},#{z_name},#{z_time},#{z_passtime},#{z_docnum},#{local},#{add},#{type},#{url},#{filename},#{state});
+    INSERT INTO z_project(project_userid,project_name,project_time,project_passtime,project_docnum,project_local1,project_local2,project_local3,project_street,project_type,project_url,project_context,project_state) VALUES (#{z_userid},#{z_name},#{z_time},#{z_passtime},#{z_docnum},#{local1},#{local2},#{local3},#{add},#{type},#{url},#{filename},#{state});
 </insert>
 
     <select id="selectproject" parameterType="map" resultType="map">

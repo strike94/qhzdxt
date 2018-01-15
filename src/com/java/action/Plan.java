@@ -25,15 +25,15 @@ public class Plan extends FileUpload{
     PlanService service;
 
     @RequestMapping(value = "addPlan",method = RequestMethod.POST)
-    public ModelAndView addPlan(HttpServletRequest req,String name,String docnum,String date,String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file){
-        String local=local1+local2+local3;
+    public ModelAndView addPlan(HttpServletRequest req,String name,String docnum,String date,
+                                String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
         Map map=fileUpload(req,file);
         String filepath= (String) map.get("filePath");
         String filename= (String) map.get("fileName");
-        int rs=service.addPlan(userid,name,docnum,date,local,address,filepath,filename);
+        int rs=service.addPlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename);
         if (rs==1){
             System.out.println("数据录入成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
