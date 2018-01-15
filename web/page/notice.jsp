@@ -67,7 +67,6 @@
             }
             $("#type").val(type);
             document.forms[0].submit();
-            alert(document.getElementById("type").value)
         }
         function tt(y) {
             if (y==1){
@@ -77,7 +76,6 @@
                 $("#page").val("prev");
                 document.forms[0].submit();
             }
-            alert(document.getElementById("page").value)
         }
         function xxx() {
             document.forms[0].submit();
@@ -124,7 +122,7 @@
             <div class="selectionGroup">
                 <div class="dropDown"  style="width:120px;">
                     <select data-placeholder="所属区县" class="chosen-select-no-single" tabindex="9" name="local1">
-                        <option value=""></option>
+                        <option value="${requestScope.local1}">${requestScope.local1}</option>
                         <option value="全部">全部</option>
                         <option value="已发布">已发布</option>
                         <option value="未发布">未发布</option>
@@ -134,7 +132,7 @@
             <div class="selectionGroup">
                 <div class="dropDown"  style="width:120px;">
                     <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9" name="local2">
-                        <option value=""></option>
+                        <option value="${requestScope.local2}">${requestScope.local2}</option>
                         <option value="全部">全部</option>
                         <option value="已发布">已发布</option>
                         <option value="未发布">未发布</option>

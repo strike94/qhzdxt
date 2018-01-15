@@ -87,7 +87,7 @@
 <div class="dashboard">
     <ul class="clearfix">
         <li class="fadeInUp f1"><a href="allnotice.html" class="hdBox befor"><b class="hoverMaskBg"></b> <img src="<%=basePath %>uploadfiles/notice.png" /> <span class="subSys twoLine">批前征地信息公告</span> </a>
-            <div class="stat"> <a href="<%=basePath%>page/notice.jsp"><i>23</i><b>我发起的公告</b></a> <a href="notice.html"><i>0</i><b>我的待办</b></a> </div>
+            <div class="stat"> <a href="<%=basePath%>notice/show"><i>23</i><b>我发起的公告</b></a> <a href="notice.html"><i>0</i><b>我的待办</b></a> </div>
             <div class="funprocess">项目审批前</div>
             <div class="taskBox"> <a href="<%=basePath%>page/addNotice.jsp" class="initiate">发布批前征地信息公告</a> </div>
         </li>

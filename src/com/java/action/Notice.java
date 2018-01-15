@@ -30,11 +30,10 @@ public class Notice extends FileUpload {
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
-        String local=local1+local2+local3;
         Map map=fileUpload(req,file);
         String filepath= (String) map.get("filePath");
         String filename= (String) map.get("fileName");
-        int rs=service.addNotice(userid,type,name,docnum,date,local,address,filepath,filename);
+        int rs=service.addNotice(userid,type,name,docnum,date,local1,local2,local3,address,filepath,filename);
         if (rs==1){
             System.out.println("数据录入成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
@@ -65,6 +64,8 @@ public class Notice extends FileUpload {
         }
         req.setAttribute("pageNum",currentPage);
         req.setAttribute("type",type);
+        req.setAttribute("local1",local1);
+        req.setAttribute("local2",local2);
         service.show(req,currentPage,type,local1,local2);
         return new ModelAndView("/page/notice");
     }

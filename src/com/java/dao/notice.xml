@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="noticeNameSpace">
     <insert id="addnotice" parameterType="map">
-         INSERT INTO z_notice(notice_name,notice_date,notice_userid,notice_address,notice_street,notice_docnum,notice_type,notice_url,notice_context) VALUES (#{name},#{date},#{g_userid},#{local},#{address},#{docnum},#{type},#{url},#{filename});
+         INSERT INTO z_notice(notice_name,notice_date,notice_userid,notice_local1,notice_local2,notice_local3,notice_street,notice_docnum,notice_type,notice_url,notice_context) VALUES (#{name},#{date},#{g_userid},#{local1},#{local2},#{local3},#{add},#{docnum},#{type},#{url},#{filename});
     </insert>
 
     <select id="selectnotice" parameterType="map" resultType="map">
