@@ -111,7 +111,7 @@
                     </div>
                     <div class="halfPart"> <em class="frmLabel">文号</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput"  name="docnum" />
+                            <input type="text" class="textInput"  name="docnum" />${data.Plan_docnum}
                         </div>
                     </div>
                 </div>
