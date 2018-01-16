@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
-@RequestMapping("project")
+@RequestMapping("back/project")
 public class Project extends FileUpload{
     @Autowired
     ProjectService service;

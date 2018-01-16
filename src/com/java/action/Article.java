@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 
 @Controller
-@RequestMapping("art")
+@RequestMapping("back/art")
 public class Article {
     @Autowired
     ArticleService service;

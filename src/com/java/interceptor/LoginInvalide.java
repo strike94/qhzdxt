@@ -15,7 +15,7 @@ public class LoginInvalide implements HandlerInterceptor {
         if (session.getAttribute("user")!=null){
             return true;
         }else {
-            resp.sendRedirect("/qhzdxt/page/login.jsp");
+            resp.sendRedirect("/qhzdxt/page/Login.jsp");
         }
         return false;
     }

@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("Plan")
+@RequestMapping("back/Plan")
 public class Plan extends FileUpload{
     @Autowired
     PlanService service;

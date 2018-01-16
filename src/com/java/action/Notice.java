@@ -20,7 +20,7 @@ import java.util.Map;
 
 @SuppressWarnings("all")
 @Controller
-@RequestMapping("notice")
+@RequestMapping("back/notice")
 public class Notice extends FileUpload {
     @Autowired
     NoticeService service;
