@@ -85,7 +85,6 @@ $(function(){
 
     </div>
     <form action="<%=basePath %>Plan/Plandetile" method="post" enctype="multipart/form-data">
-      <c:forEach items="${applicationScope.Plan}" var="obj">
         <div class="pulicBox">
           <div class="newArticle">
             <div class="msgEditlabel clearfix">
@@ -94,25 +93,25 @@ $(function(){
                 <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
               </div>
               <div class="halfPart"> <em class="frmLabel">文号</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit" name="name">${obj.Plan_name}</div>
+                <div class="frmInputBox frmInputBoxNoTextLimit" name="name">${map.Plan_name}</div>
               </div>
             </div>
             <div class="msgEditlabel clearfix">
               <div class="halfPart"> <em class="frmLabel">发布时间</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit"/>${obj.s_time}</div>
+                <div class="frmInputBox frmInputBoxNoTextLimit"/>${map.s_time}</div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">项目位置</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit"> ${obj.Plan_local1}${obj.Plan_local2}${obj.Plan_local3} </div>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> ${map.Plan_local1}${map.Plan_local2}${map.Plan_local3} </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">所属村居</em>
               <div class="frmInputBox frmInputBoxNoTextLimit">
-                  ${obj.Plan_street}
+                  ${map.Plan_street}
               </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
@@ -124,7 +123,7 @@ $(function(){
 
                   <div class="uploadFinish" style="visibility: hidden">
                     <i class="success"></i><!--失败调用error-->
-                    <span class="loadName">${obj.fliename} </span>
+                    <span class="loadName">${map.fliename} </span>
                     <a href="javascript:;" class="delUpfiles"></a>
                   </div>
                 </div>
@@ -137,7 +136,6 @@ $(function(){
           <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
           <button class="ctrlBtn canclBtn" name="state" value="已过期">取消发布</button>
         </div>
-      </c:forEach>
     </form>
   </div>
 </div>

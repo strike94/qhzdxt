@@ -100,13 +100,12 @@
 
         </div>
         <form action="<%=basePath %>Plan/updatePlan" method="post" enctype="multipart/form-data">
-        <c:forEach items="${applicationScope.Plan}" var="obj">
         <div class="pulicBox">
             <div class="newArticle">
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">公告名称</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="name"/>${obj.Plan_name}
+                            <input type="text" class="textInput" name="name"/>${map.Plan_name}
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -119,7 +118,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">发布时间</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" onClick="WdatePicker()" name="date"/>${obj.s_time}
+                            <input type="text" class="textInput" onClick="WdatePicker()" name="date"/>${map.s_time}
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -130,7 +129,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在州" class="chosen-select-no-single" tabindex="9" name="local1">
-                                        <option value="${obj.Plan_local1}">${obj.Plan_local1}</option>
+                                        <option value="${map.Plan_local1}">${map.Plan_local1}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -140,7 +139,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在区县" class="chosen-select-no-single" tabindex="9" name="local2">
-                                        <option value="${obj.Plan_local2}">${obj.Plan_local2}</option>
+                                        <option value="${map.Plan_local2}">${map.Plan_local2}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -150,7 +149,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9" name="local3">
-                                        <option value="${obj.Plan_local3}">${obj.Plan_local3}</option>
+                                        <option value="${map.Plan_local3}">${map.Plan_local3}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -164,7 +163,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">所属村居</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="address"/>${obj.Plan_street}
+                            <input type="text" class="textInput" name="address"/>${map.Plan_street}
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -180,7 +179,7 @@
                                 </div>
                                 <div class="uploadFinish" style="visibility: hidden">
                                     <i class="success"></i><!--失败调用error-->
-                                    <span class="loadName">${obj.fliename} </span>
+                                    <span class="loadName">${map.fliename} </span>
                                     <a href="javascript:;" class="delUpfiles"></a>
                                 </div>
                             </div>
@@ -195,7 +194,6 @@
             <button class="ctrlBtn focusBtn" onClick="javascript:location.href='Plan.jsp'" name="state" value="待提交">保存</button>
             <button class="ctrlBtn focusBtn" type="submit" name="state" value="待审核">保存并送审</button>
         </div>
-        </c:forEach>
         </form>
     </div>
 </div>
