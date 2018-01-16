@@ -90,8 +90,8 @@ $(function(){
         <div class="newArticle">
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">公告名称</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit"name="name">${data.Plan_name}</div>
-              <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
+              <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_name}</div>
+              <input type="hidden" class="textInput" name="name"/>${data.Plan_name}
             </div>
             <div class="halfPart"> <em class="frmLabel">文号</em>
               <div class="frmInputBox frmInputBoxNoTextLimit" >${data.Plan_docnum}</div>
