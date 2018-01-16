@@ -105,20 +105,20 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">公告名称</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="name"/>${data.Plan_name}
+                            <input type="text" class="textInput" name="name"value=" ${data.Plan_name}"/>
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
                     <div class="halfPart"> <em class="frmLabel">文号</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput"  name="docnum" />${data.Plan_docnum}
+                            <input type="text" class="textInput"  name="docnum"value="${data.Plan_docnum}" />
                         </div>
                     </div>
                 </div>
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">发布时间</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" onClick="WdatePicker()" name="date"/>${data.s_time}
+                            <input type="text" class="textInput" onClick="WdatePicker()" name="date"value="${data.s_time}"/>
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -163,7 +163,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">所属村居</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="address"/>${data.Plan_street}
+                            <input type="text" class="textInput" name="address"value="${data.Plan_street}"/>
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
