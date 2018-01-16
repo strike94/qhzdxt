@@ -7,12 +7,13 @@
     </insert>
 
     <update id="updatePlan" parameterType="map">
-        UPDATE z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_local1,Plan_local2,Plan_local3,Plan_street,s_time,Plan_url,Plan_context,Plan_state) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local1},#{local2},#{local3},#{address},#{s_time},#{url},#{filename},#{Plan_state})
+        UPDATE z_plan SET Plan_userid=#{Plan_userid},Plan_name=#{Plan_name},Plan_docnum=#{Plan_docnum},Plan_local1=#{local1},
+        Plan_local2=#{local2},Plan_local3=#{local3},Plan_street=#{address},s_time=#{s_time},Plan_url=#{url},Plan_context=#{filename},Plan_state=,#{Plan_state}
         WHERE Plan_name=#{Plan_name}
     </update>
 
     <update id="detailPlan" parameterType="map">
-    UPDATE z_plan(Plan_state) VALUES (#{Plan_state}) WHERE Plan_name=#{Plan_name}
+    UPDATE z_plan SET  Plan_state=#{Plan_state} WHERE z_Plan.`Plan_name`=#{Plan_name}
     </update>
 
     <select id="selectPlan" parameterType="map" resultType="map">
