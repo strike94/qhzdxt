@@ -91,7 +91,7 @@ $(function(){
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">公告名称</em>
               <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_name}</div>
-              <input type="hidden" class="textInput" name="name"/>${data.Plan_name}
+              <input type="hidden" class="textInput" name="name"value="${data.Plan_name}"/>
             </div>
             <div class="halfPart"> <em class="frmLabel">文号</em>
               <div class="frmInputBox frmInputBoxNoTextLimit" >${data.Plan_docnum}</div>
