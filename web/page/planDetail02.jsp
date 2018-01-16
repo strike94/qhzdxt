@@ -39,7 +39,6 @@ $(function(){
 	});
 </script>
 </head>
-
 <body>
 <div class="header">
   <h1 class="logoText">青海省征地信息公开系统</h1>
@@ -63,44 +62,44 @@ $(function(){
   <div class="wrp clearfix">
     <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">拟征收土地补偿安置方案公告</a><b class="partLine grayColor">/</b><b>新增拟征收土地补偿安置方案公告</b></span></div>
     <div class="processWrap">
-    <div class="processBox threeStep">
-    <div class="percentage"></div>
-    <div class="pocessLine">
+      <div class="processBox threeStep">
+        <div class="percentage"></div>
+        <div class="pocessLine">
     <span class="processPoint active">
     <em class="percentage"></em>
     <i class="pointIcon"></i>
     <b class="ponitText">县级发起批前项目</b>
     </span>
-    <span class="processPoint">
+          <span class="processPoint">
     <em class="percentage"></em>
     <i class="pointIcon"></i>
     <b class="ponitText">市（州）审核</b>
     </span>
-    <span class="processPoint">
+          <span class="processPoint">
     <em class="percentage"></em>
     <i class="pointIcon"></i>
     <b class="ponitText">发布成功</b>
     </span>
+        </div>
+      </div>
+
     </div>
-    </div>
-    
-    </div>
-  <form action="<%=basePath %>Plan/Plandetile" method="post" enctype="multipart/form-data">
-    <c:forEach items="${applicationScope.Plan}" var="obj">
-      <div class="pulicBox">
-        <div class="newArticle">
-          <div class="msgEditlabel clearfix">
-            <div class="halfPart"> <em class="frmLabel">公告名称</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit"> 2017年度西商村拟征收土地公告 </div>
-              <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
+    <form action="<%=basePath %>Plan/Plandetile" method="post" enctype="multipart/form-data">
+      <c:forEach items="${applicationScope.Plan}" var="obj">
+        <div class="pulicBox">
+          <div class="newArticle">
+            <div class="msgEditlabel clearfix">
+              <div class="halfPart"> <em class="frmLabel">公告名称</em>
+                <div class="frmInputBox frmInputBoxNoTextLimit"> 2017年度西商村拟征收土地公告 </div>
+                <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
+              </div>
+              <div class="halfPart"> <em class="frmLabel">文号</em>
+                <div class="frmInputBox frmInputBoxNoTextLimit" name="name">${obj.Plan_name}</div>
+              </div>
             </div>
-            <div class="halfPart"> <em class="frmLabel">文号</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit" name="name">${obj.Plan_name}</div>
-            </div>
-          </div>
-          <div class="msgEditlabel clearfix">
-            <div class="halfPart"> <em class="frmLabel">发布时间</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit"/>${obj.s_time}</div>
+            <div class="msgEditlabel clearfix">
+              <div class="halfPart"> <em class="frmLabel">发布时间</em>
+                <div class="frmInputBox frmInputBoxNoTextLimit"/>${obj.s_time}</div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
@@ -134,13 +133,12 @@ $(function(){
             </div>
           </div>
         </div>
-      <div class="ctrlBar">
-        <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-        <button class="ctrlBtn focusBtn" onClick="javascript:location.href='updatePlan.jsp'">修改</button>
-        <button class="ctrlBtn focusBtn" type="submit" name="state" value="待审核">提交审核</button>
-      </div>
-    </c:forEach>
-  </form>
+        <div class="ctrlBar">
+          <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
+          <button class="ctrlBtn canclBtn" name="state" value="已过期">取消发布</button>
+        </div>
+      </c:forEach>
+    </form>
   </div>
 </div>
 <script type="text/javascript">
@@ -159,7 +157,32 @@ $(function(){
 <div class="messageBox">
 <div class="messageBoxContent">
   <div class="messageMain">
-   <div class="loadMore">
+    <ul>
+      <li class="messageItem">
+        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
+        <div class="messageBlock">
+        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
+        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
+        <a class="messageTodo" href="plan.html">立即处理</a>
+        </div>
+      </li>
+      <li class="messageItem">
+        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
+        <div class="messageBlock">
+        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
+        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
+        <a class="messageTodo" href="plan.html">立即处理</a>
+        </div>
+      </li>
+      <li class="messageItem">
+        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
+        <div class="messageBlock">
+        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
+        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
+        <a class="messageTodo" href="plan.html">立即处理</a>
+        </div>
+      </li>
+    </ul><div class="loadMore">
     <a href="javascript:;">加载更多</a>
     </div>
   </div>

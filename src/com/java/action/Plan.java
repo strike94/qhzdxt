@@ -24,16 +24,34 @@ public class Plan extends FileUpload{
     @Autowired
     PlanService service;
 
-    @RequestMapping(value = "addPlan",method = RequestMethod.POST)
-    public ModelAndView addPlan(HttpServletRequest req,String name,String docnum,String date,
-                                String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file){
+
+    @RequestMapping(value = "updatePlan",method = RequestMethod.POST)
+    public ModelAndView updatePlan(HttpServletRequest req,String name,String docnum,String date,
+                                String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file,String state){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
         Map map=fileUpload(req,file);
         String filepath= (String) map.get("filePath");
         String filename= (String) map.get("fileName");
-        int rs=service.addPlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename);
+        int rs=service.updatePlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
+        if (rs==1){
+            System.out.println("数据修改成功");
+            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "addPlan",method = RequestMethod.POST)
+    public ModelAndView addPlan(HttpServletRequest req,String name,String docnum,String date,
+                                String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file,String state){
+        HttpSession session=req.getSession();
+        User user= (User) session.getAttribute("user");
+        int userid=user.getUserid();
+        Map map=fileUpload(req,file);
+        String filepath= (String) map.get("filePath");
+        String filename= (String) map.get("fileName");
+        int rs=service.addPlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
         if (rs==1){
             System.out.println("数据录入成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
@@ -73,6 +91,33 @@ public class Plan extends FileUpload{
         Map data=service.detail(Planid);
         Map map=new HashMap();
         map.put("data",data);
-        return new ModelAndView("/page/planDetail",map);
+        if(map.get("Plan_state").equals("待提交")) {
+            return new ModelAndView("/page/planDetail", map);
+        }
+        if(map.get("Plan_state").equals("待审核")) {
+            return new ModelAndView("/page/planDetail01", map);
+        }
+        if (map.get("Plan_state").equals("已发布")){
+            return new ModelAndView("/page/planDetail02", map);
+        }
+        return  null;
     }
+
+    @RequestMapping(" Plandetile")
+    public ModelAndView detail(HttpServletRequest req,String name,String state){
+        int rs=service.detailPlan(name,state);
+        if (rs==1) {
+            System.out.println("数据修改成功");
+            int currentPage = 1;
+            String type = "全部";
+            String local1 = null;
+            String local2 = null;
+            req.setAttribute("pageNum", currentPage);
+            req.setAttribute("type", type);
+            service.show(req, currentPage, type, local1, local2);
+            return new ModelAndView("page/Plan");
+        }
+        return  null;
+    }
+
 }
