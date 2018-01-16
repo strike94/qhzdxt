@@ -16,8 +16,8 @@ public class PlanService extends Origin{
         map.put("Plan_name",name);
         map.put("Plan_docnum",docnum);
         map.put("local1",local1);
-        map.put("local1",local2);
-        map.put("local1",local3);
+        map.put("local2",local2);
+        map.put("local3",local3);
         map.put("address",address);
         map.put("s_time",date);
         map.put("url",filepath);
@@ -63,8 +63,8 @@ public class PlanService extends Origin{
         map.put("Plan_name",name);
         map.put("Plan_docnum",docnum);
         map.put("local1",local1);
-        map.put("local1",local2);
-        map.put("local1",local3);
+        map.put("local2",local2);
+        map.put("local3",local3);
         map.put("address",address);
         map.put("s_time",date);
         map.put("url",filepath);
