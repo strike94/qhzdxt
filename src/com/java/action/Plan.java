@@ -90,6 +90,9 @@ public class Plan extends FileUpload{
         Map data=service.detail(Planid);
         Map map=new HashMap();
         map.put("data",data);
+        if(data.get("Plan_state").equals("修改中")) {
+            return new ModelAndView("/page/updatePlan", map);
+        }
         if(data.get("Plan_state").equals("待提交")) {
             return new ModelAndView("/page/planDetail", map);
         }

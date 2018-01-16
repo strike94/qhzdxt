@@ -135,7 +135,7 @@ $(function(){
         </div>
       <div class="ctrlBar">
         <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-        <button class="ctrlBtn focusBtn" onClick="javascript:location.href='updatePlan.jsp'">修改</button>
+        <button class="ctrlBtn focusBtn" type="submit" name="state" value="修改中">修改</button>
         <button class="ctrlBtn focusBtn" type="submit" name="state" value="待审核">提交审核</button>
       </div>
   </form>
