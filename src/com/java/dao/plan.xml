@@ -3,11 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="PlanNameSpace">
     <insert id="addPlan" parameterType="map">
-         INSERT INTO z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_local1,Plan_local2,Plan_local3,Plan_street,Plan_time,Plan_url,Plan_context,Plan_state) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local1},#{local2},#{local3},#{address},#{Plan_time},#{url},#{filename},#{Plan_state});
+         INSERT INTO z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_local1,Plan_local2,Plan_local3,Plan_street,s_time,Plan_url,Plan_context,Plan_state) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local1},#{local2},#{local3},#{address},#{s_time},#{url},#{filename},#{Plan_state});
     </insert>
 
     <update id="updatePlan" parameterType="map">
-        UPDATE INTO z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_local1,Plan_local2,Plan_local3,Plan_street,Plan_time,Plan_url,Plan_context,Plan_state) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local1},#{local2},#{local3},#{address},#{Plan_time},#{url},#{filename},#{Plan_state})
+        UPDATE INTO z_plan(Plan_userid,Plan_name,Plan_docnum,Plan_local1,Plan_local2,Plan_local3,Plan_street,s_time,Plan_url,Plan_context,Plan_state) VALUES (#{Plan_userid},#{Plan_name},#{Plan_docnum},#{local1},#{local2},#{local3},#{address},#{s_time},#{url},#{filename},#{Plan_state})
         WHERE Plan_name=#{Plan_name}
     </update>
 
