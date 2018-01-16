@@ -100,7 +100,7 @@
     </div>
     <div class="wrp hasleft">
         <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">征地信息文章</a><b class="partLine grayColor">/</b><b>添加文章</b></span></div>
-        <form action="<%=basePath%>art/add" method="post" id="article">
+        <form action="<%=basePath%>back/art/add" method="post" id="article">
         <div class="pulicBox clearfix">
             <div class="newArticle" style="padding-top:0;">
 

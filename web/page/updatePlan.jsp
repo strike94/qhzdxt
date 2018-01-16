@@ -99,7 +99,7 @@
             </div>
 
         </div>
-        <form action="<%=basePath %>Plan/updatePlan" method="post" enctype="multipart/form-data">
+        <form action="<%=basePath %>back/Plan/updatePlan" method="post" enctype="multipart/form-data">
         <div class="pulicBox">
             <div class="newArticle">
                 <div class="msgEditlabel clearfix">

@@ -85,7 +85,7 @@ $(function(){
     </div>
     
     </div>
-  <form action="<%=basePath %>Plan/Plandetile" method="post" enctype="multipart/form-data">
+  <form action="<%=basePath %>back/Plan/Plandetile" method="post" enctype="multipart/form-data">
       <div class="pulicBox">
         <div class="newArticle">
           <div class="msgEditlabel clearfix">

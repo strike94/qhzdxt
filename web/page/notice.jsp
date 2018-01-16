@@ -111,7 +111,7 @@
             <li><a href="notice.html" class="end"><i></i><span>已发布公告</span></a></li>
         </ul>
     </div>
-    <form action="<%=basePath%>notice/show" method="get">
+    <form action="<%=basePath%>back/notice/show" method="get">
     <div class="wrp hasleft clearfix">
         <div class="subTab Margin30">
             <div class="subTabInner"><a class="active" onclick="typechange(0)"><em>全部</em><b></b></a><a  onclick="typechange(1)"><em>拟征收土地公告</em><b></b></a><a onclick="typechange(2)"><em>拟征收土地补偿安置方案公告</em><b></b></a>
