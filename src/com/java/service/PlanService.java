@@ -53,7 +53,7 @@ public class PlanService extends Origin{
         Map map=new HashMap();
         map.put("Plan_name",name);
         map.put("Plan_state",state);
-        int rs=super.sqlSessionTemplate.insert("PlanNameSpace.detailPlan",map);
+        int rs=super.sqlSessionTemplate.insert("PlanNameSpace.Plandetail",map);
         return  rs;
     }
 
