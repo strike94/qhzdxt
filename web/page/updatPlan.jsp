@@ -105,7 +105,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">公告名称</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="name"/>${map.Plan_name}
+                            <input type="text" class="textInput" name="name"/>${data.Plan_name}
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -118,7 +118,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">发布时间</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" onClick="WdatePicker()" name="date"/>${map.s_time}
+                            <input type="text" class="textInput" onClick="WdatePicker()" name="date"/>${data.s_time}
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -129,7 +129,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在州" class="chosen-select-no-single" tabindex="9" name="local1">
-                                        <option value="${map.Plan_local1}">${map.Plan_local1}</option>
+                                        <option value="${data.Plan_local1}">${data.Plan_local1}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -139,7 +139,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在区县" class="chosen-select-no-single" tabindex="9" name="local2">
-                                        <option value="${map.Plan_local2}">${map.Plan_local2}</option>
+                                        <option value="${data.Plan_local2}">${data.Plan_local2}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -149,7 +149,7 @@
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
                                     <select data-placeholder="所在街道" class="chosen-select-no-single" tabindex="9" name="local3">
-                                        <option value="${map.Plan_local3}">${map.Plan_local3}</option>
+                                        <option value="${data.Plan_local3}">${data.Plan_local3}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
                                         <option value="未发布">未发布</option>
@@ -163,7 +163,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">所属村居</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
-                            <input type="text" class="textInput" name="address"/>${map.Plan_street}
+                            <input type="text" class="textInput" name="address"/>${data.Plan_street}
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                     </div>
@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="uploadFinish" style="visibility: hidden">
                                     <i class="success"></i><!--失败调用error-->
-                                    <span class="loadName">${map.fliename} </span>
+                                    <span class="loadName">${data.fliename} </span>
                                     <a href="javascript:;" class="delUpfiles"></a>
                                 </div>
                             </div>

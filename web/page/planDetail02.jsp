@@ -89,29 +89,29 @@ $(function(){
           <div class="newArticle">
             <div class="msgEditlabel clearfix">
               <div class="halfPart"> <em class="frmLabel">公告名称</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit"> 2017年度西商村拟征收土地公告 </div>
+                <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_name}</div>
                 <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
               </div>
               <div class="halfPart"> <em class="frmLabel">文号</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit" name="name">${map.Plan_name}</div>
+                <div class="frmInputBox frmInputBoxNoTextLimit" name="name">${data.Plan_docnum}</div>
               </div>
             </div>
             <div class="msgEditlabel clearfix">
               <div class="halfPart"> <em class="frmLabel">发布时间</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit"/>${map.s_time}</div>
+                <div class="frmInputBox frmInputBoxNoTextLimit"/>${data.s_time}</div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">项目位置</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit"> ${map.Plan_local1}${map.Plan_local2}${map.Plan_local3} </div>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.Plan_local1}${data.Plan_local2}${data.Plan_local3} </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">所属村居</em>
               <div class="frmInputBox frmInputBoxNoTextLimit">
-                  ${map.Plan_street}
+                  ${data.Plan_street}
               </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
@@ -123,7 +123,7 @@ $(function(){
 
                   <div class="uploadFinish" style="visibility: hidden">
                     <i class="success"></i><!--失败调用error-->
-                    <span class="loadName">${map.fliename} </span>
+                    <span class="loadName">${data.fliename} </span>
                     <a href="javascript:;" class="delUpfiles"></a>
                   </div>
                 </div>
@@ -155,32 +155,6 @@ $(function(){
 <div class="messageBox">
 <div class="messageBoxContent">
   <div class="messageMain">
-    <ul>
-      <li class="messageItem">
-        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
-        <div class="messageBlock">
-        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
-        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.html">立即处理</a>
-        </div>
-      </li>
-      <li class="messageItem">
-        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
-        <div class="messageBlock">
-        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
-        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.html">立即处理</a>
-        </div>
-      </li>
-      <li class="messageItem">
-        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
-        <div class="messageBlock">
-        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
-        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.html">立即处理</a>
-        </div>
-      </li>
-    </ul><div class="loadMore">
     <a href="javascript:;">加载更多</a>
     </div>
   </div>
