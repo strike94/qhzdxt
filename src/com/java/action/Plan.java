@@ -103,7 +103,7 @@ public class Plan extends FileUpload{
         return  null;
     }
 
-    @RequestMapping(" Plandetile")
+    @RequestMapping(value = "Plandetile",method = {RequestMethod.POST,RequestMethod.GET})
     public ModelAndView detail(HttpServletRequest req,String name,String state){
         int rs=service.detailPlan(name,state);
         if (rs==1) {
