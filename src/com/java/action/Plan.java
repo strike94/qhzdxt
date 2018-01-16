@@ -99,6 +99,9 @@ public class Plan extends FileUpload{
         if (data.get("Plan_state").equals("已发布")){
             return new ModelAndView("/page/planDetail02", map);
         }
+        if (data.get("Plan_state").equals("待发布")){
+            return new ModelAndView("/page/planDetail03", map);
+        }
         return  null;
     }
 

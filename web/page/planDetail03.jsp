@@ -134,7 +134,7 @@ $(function(){
         </div>
         <div class="ctrlBar">
           <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-          <button class="ctrlBtn canclBtn" name="state" value="待发布">取消发布</button>
+          <button class="ctrlBtn canclBtn" name="state" value="已发布">发布</button>
         </div>
     </form>
   </div>
