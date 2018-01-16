@@ -60,7 +60,7 @@ public class Plan extends FileUpload{
     }
 
     @RequestMapping("/show")
-    public ModelAndView show(HttpServletRequest req,String pageTo,String type,String local1,String local2,String page){
+    public ModelAndView show(HttpServletRequest req,String pageTo,String local1,String local2,String page){
         ServletContext sc=req.getSession().getServletContext();
         sc.removeAttribute("Plan");
         int currentPage=1;
@@ -81,8 +81,7 @@ public class Plan extends FileUpload{
             currentPage=1;
         }
         req.setAttribute("pageNum",currentPage);
-        req.setAttribute("type",type);
-        service.show(req,currentPage,type,local1,local2);
+        service.show(req,currentPage,local1,local2);
         return new ModelAndView("page/Plan");
     }
 
@@ -109,12 +108,10 @@ public class Plan extends FileUpload{
         if (rs==1) {
             System.out.println("数据修改成功");
             int currentPage = 1;
-            String type = "全部";
             String local1 = null;
             String local2 = null;
             req.setAttribute("pageNum", currentPage);
-            req.setAttribute("type", type);
-            service.show(req, currentPage, type, local1, local2);
+            service.show(req, currentPage, local1, local2);
             return new ModelAndView("page/Plan");
         }
         return  null;
