@@ -119,8 +119,10 @@ public class Plan extends FileUpload{
             req.setAttribute("pageNum", currentPage);
             service.show(req, currentPage, local1, local2);
             return new ModelAndView("page/Plan");
+        }if(rs==2){
+            return new ModelAndView("page/updatePlan");
         }
-        return  null;
+        return  new ModelAndView("page/Plan");
     }
 
 }
