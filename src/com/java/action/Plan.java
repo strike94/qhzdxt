@@ -39,7 +39,7 @@ public class Plan extends FileUpload{
             System.out.println("数据修改成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
         }
-        return null;
+        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
     }
 
     @RequestMapping(value = "addPlan",method = RequestMethod.POST)
