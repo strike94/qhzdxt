@@ -105,6 +105,7 @@
                 <div class="msgEditlabel clearfix">
                     <div class="halfPart"> <em class="frmLabel">公告名称</em>
                         <div class="frmInputBox frmInputBoxNoTextLimit">
+                            <input type="hidden" class="textInput" name="Planid"value="${data.Plan_id}"/>
                             <input type="text" class="textInput" name="name"value=" ${data.Plan_name}"/>
                         </div>
                         <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->

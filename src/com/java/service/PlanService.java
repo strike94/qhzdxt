@@ -49,16 +49,17 @@ public class PlanService extends Origin{
         }
     }
 
-    public int detailPlan(String name,String state){
+    public int detailPlan(String Planid,String state){
         Map map=new HashMap();
-        map.put("Plan_name",name);
+        map.put("Plan_id",Planid);
         map.put("Plan_state",state);
         int rs=super.sqlSessionTemplate.update("PlanNameSpace.detailPlan",map);
         return  rs;
     }
 
-    public int updatePlan(int userid,String name,String docnum,String date,String local1,String local2,String local3,String address,String filepath,String filename,String state){
+    public int updatePlan(String Planid,int userid,String name,String docnum,String date,String local1,String local2,String local3,String address,String filepath,String filename,String state){
         Map map=new HashMap();
+        map.put("Plan_id",Planid);
         map.put("Plan_userid",userid);
         map.put("Plan_name",name);
         map.put("Plan_docnum",docnum);
@@ -76,7 +77,7 @@ public class PlanService extends Origin{
     
     public Map detail(String Planid) {
         Map map=new HashMap();
-        map.put("Planid",Planid);
+        map.put("Plan_id",Planid);
         Map data=super.sqlSessionTemplate.selectOne("PlanNameSpace.Plandetail",map);
         return data;
     }

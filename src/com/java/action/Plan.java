@@ -26,7 +26,7 @@ public class Plan extends FileUpload{
 
 
     @RequestMapping(value = "updatePlan",method = RequestMethod.POST)
-    public ModelAndView updatePlan(HttpServletRequest req,String name,String docnum,String date,
+    public ModelAndView updatePlan(HttpServletRequest req,String Planid,String name,String docnum,String date,
                                 String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file,String state){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
@@ -34,7 +34,7 @@ public class Plan extends FileUpload{
         Map map=fileUpload(req,file);
         String filepath= (String) map.get("filePath");
         String filename= (String) map.get("fileName");
-        int rs=service.updatePlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
+        int rs=service.updatePlan(Planid,userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
         if (rs==1){
             System.out.println("数据修改成功");
             return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/Plan.jsp"));
@@ -109,8 +109,8 @@ public class Plan extends FileUpload{
     }
 
     @RequestMapping(value = "Plandetile",method = {RequestMethod.POST,RequestMethod.GET})
-    public ModelAndView detail(HttpServletRequest req,String name,String state){
-        int rs=service.detailPlan(name,state);
+    public ModelAndView detail(HttpServletRequest req,String Planid,String state){
+        int rs=service.detailPlan(Planid,state);
         if (rs==1) {
             System.out.println("数据修改成功");
             int currentPage = 1;
