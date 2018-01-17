@@ -37,9 +37,9 @@ public class Plan extends FileUpload{
         int rs=service.updatePlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
         if (rs==1){
             System.out.println("数据修改成功");
-            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/Plan.jsp"));
         }
-        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/updatePlan.jsp"));
     }
 
     @RequestMapping(value = "addPlan",method = RequestMethod.POST)
