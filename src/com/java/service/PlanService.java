@@ -54,8 +54,9 @@ public class PlanService extends Origin{
         map.put("Plan_id",Planid);
         map.put("Plan_state",state);
         int rs=super.sqlSessionTemplate.update("PlanNameSpace.detailPlan",map);
-        if(state=="修改中" && rs==1){
-        rs=2;
+        if("修改中".equals(state) && rs==1){
+            rs=2;
+            return rs;
         }
         return  rs;
     }

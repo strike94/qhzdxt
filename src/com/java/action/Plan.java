@@ -120,7 +120,10 @@ public class Plan extends FileUpload{
             service.show(req, currentPage, local1, local2);
             return new ModelAndView("page/Plan");
         }if(rs==2){
-            return new ModelAndView("page/updatePlan");
+            Map data=service.detail(Planid);
+            Map map=new HashMap();
+            map.put("data",data);
+            return new ModelAndView("page/updatePlan",map);
         }
         return  new ModelAndView("page/Plan");
     }
