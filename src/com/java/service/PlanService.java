@@ -52,9 +52,9 @@ public class PlanService extends Origin{
     public int detailPlan(String Planid,String state){
         Map map=new HashMap();
         map.put("Plan_id",Planid);
-        map.put("Plan_state",state);
+        map.put("stateid",state);
         int rs=super.sqlSessionTemplate.update("PlanNameSpace.detailPlan",map);
-        if("修改中".equals(state) && rs==1){
+        if(Integer.parseInt(state)==5 && rs==1){
             rs=2;
             return rs;
         }
@@ -74,7 +74,7 @@ public class PlanService extends Origin{
         map.put("s_time",date);
         map.put("url",filepath);
         map.put("filename",filename);
-        map.put("Plan_state",state);
+        map.put("stateid",state);
         int rs=super.sqlSessionTemplate.update("PlanNameSpace.updatePlan",map);
         return rs;
     }

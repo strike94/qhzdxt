@@ -17,16 +17,15 @@ import javax.servlet.http.HttpSession;
 public class Login {
     @Autowired
     LoginService service;
-
     @RequestMapping(value = "show",method = RequestMethod.POST)
-    public ModelAndView login(HttpServletRequest req, String username, String password){
+    public String login(HttpServletRequest req, String username, String password){
         User user=service.login(username,password);
         if (user!= null) {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            return  new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+            return  "redirect:/page/home.jsp";
         }else{
-            return new ModelAndView("/page/login");
+            return "/page/login";
         }
     }
 }

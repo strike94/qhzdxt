@@ -24,10 +24,8 @@ public class Plan extends FileUpload{
     @Autowired
     PlanService service;
 
-
     @RequestMapping(value = "updatePlan",method = RequestMethod.POST)
-    public ModelAndView updatePlan(HttpServletRequest req,String Planid,String name,String docnum,String date,
-                                String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file,String state){
+    public String updatePlan(HttpServletRequest req,String Planid,String name,String docnum,String date, String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file,String state){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
@@ -37,13 +35,13 @@ public class Plan extends FileUpload{
         int rs=service.updatePlan(Planid,userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
         if (rs==1){
             System.out.println("数据修改成功");
-            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/Plan.jsp"));
+            return "redirect:/page/Plan";
         }
-        return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/updatePlan.jsp"));
+        return "redirect:/page/updatePlan";
     }
 
     @RequestMapping(value = "addPlan",method = RequestMethod.POST)
-    public ModelAndView addPlan(HttpServletRequest req,String name,String docnum,String date,
+    public String addPlan(HttpServletRequest req,String name,String docnum,String date,
                                 String local1,String local2,String local3,String address,@RequestParam("file") MultipartFile file,String state){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
@@ -54,13 +52,13 @@ public class Plan extends FileUpload{
         int rs=service.addPlan(userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
         if (rs==1){
             System.out.println("数据录入成功");
-            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+            return "redirect:/page/home.jsp";
         }
         return null;
     }
 
     @RequestMapping("/show")
-    public ModelAndView show(HttpServletRequest req,String pageTo,String local1,String local2,String page){
+    public String show(HttpServletRequest req,String pageTo,String local1,String local2,String page){
         ServletContext sc=req.getSession().getServletContext();
         sc.removeAttribute("Plan");
         int currentPage=1;
@@ -82,7 +80,7 @@ public class Plan extends FileUpload{
         }
         req.setAttribute("pageNum",currentPage);
         service.show(req,currentPage,local1,local2);
-        return new ModelAndView("page/Plan");
+        return "page/Plan";
     }
 
     @RequestMapping("detail")
@@ -90,25 +88,26 @@ public class Plan extends FileUpload{
         Map data=service.detail(Planid);
         Map map=new HashMap();
         map.put("data",data);
-        if(data.get("Plan_state").equals("修改中")) {
+        int state= (int) data.get("stateid");
+        if(state==5) {
             return new ModelAndView("/page/updatePlan", map);
         }
-        if(data.get("Plan_state").equals("待提交")) {
+        if(state==1) {
             return new ModelAndView("/page/planDetail", map);
         }
-        if(data.get("Plan_state").equals("待审核")) {
+        if(state==2) {
             return new ModelAndView("/page/planDetail01", map);
         }
-        if (data.get("Plan_state").equals("已发布")){
+        if (state==3){
             return new ModelAndView("/page/planDetail02", map);
         }
-        if (data.get("Plan_state").equals("待发布")){
+        if (state==4){
             return new ModelAndView("/page/planDetail03", map);
         }
         return  null;
     }
 
-    @RequestMapping(value = "Plandetile",method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "Plandetail",method = {RequestMethod.POST,RequestMethod.GET})
     public ModelAndView detail(HttpServletRequest req,String Planid,String state){
         int rs=service.detailPlan(Planid,state);
         if (rs==1) {

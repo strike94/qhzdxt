@@ -18,7 +18,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<import resource="dataSource.xml"></import>
 
-
+    <context:property-placeholder location="classpath:com/java/properties/jdbc.properties"/>
        <!--   扫描所有com.java.*包下面的类，检查是否有配置注解，根据不同的注解完成不同的功能。-->
      <context:component-scan base-package="com.java.*" />
      	<!-- 启用注解功能 -->
@@ -33,9 +33,9 @@
 
     <!-- 配置DBCP数据源  是指连接哪一个数据库,是一个连接池 -->
       <bean id="oraclePoolId" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver"
-		p:url="jdbc:mysql://192.168.1.11:3306/qhzdxt" p:username="root"
-		p:password="123456" />
+		destroy-method="close" p:driverClassName="${jdbcDriver}"
+		p:url="${url}" p:username="${username}"
+		p:password="${password}" />
     <!-- 用户解析mybatis.xml文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
       		<property name="configLocation" value="classpath:/mybatis.xml"/>

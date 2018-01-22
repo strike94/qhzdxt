@@ -129,7 +129,7 @@
                         <div class="frmInputBox frmInputBoxNoTextLimit">
                             <div class="selectionGroup">
                                 <div class="dropDown"  style="width:120px;">
-                                    <select data-placeholder="所在州" class="chosen-select-no-single" tabindex="9" name="local1">
+                                    <select data-placeholder="所在州" class="chosen-select-no-single" tabindex="9" name="local1" style="border: 0px;background: none">
                                         <option value="${data.Plan_local1}">${data.Plan_local1}</option>
                                         <option value="全部">全部</option>
                                         <option value="已发布">已发布</option>
@@ -192,8 +192,8 @@
         </div>
         <div class="ctrlBar">
             <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-            <button class="ctrlBtn focusBtn" type="submit" name="state" value="待提交">保存</button>
-            <button class="ctrlBtn focusBtn" type="submit" name="state" value="待审核">保存并送审</button>
+            <button class="ctrlBtn focusBtn" type="submit" name="state" value="1">保存</button>
+            <button class="ctrlBtn focusBtn" type="submit" name="state" value="2">保存并送审</button>
         </div>
         </form>
     </div>

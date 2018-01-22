@@ -8,9 +8,9 @@
 
         <!-- 配置DBCP数据源  是指连接哪一个数据库,是一个连接池 -->
         <bean id="sqlPoolId" class="org.apache.commons.dbcp.BasicDataSource"
-              destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver"
-              p:url="jdbc:mysql://192.168.1.11:3306/qhzdxt" p:username="root"
-              p:password="123456" />
+              destroy-method="close" p:driverClassName="${jdbcDriver}"
+              p:url="${url}" p:username="${username}"
+              p:password="${password}" />
                 <!-- 用户解析mybatis.xml文件 -->
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
                 <property name="configLocation" value="classpath:/mybatis.xml"/>

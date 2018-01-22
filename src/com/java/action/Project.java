@@ -24,7 +24,7 @@ public class Project extends FileUpload{
     ProjectService service;
 
     @RequestMapping(value = "add",method = RequestMethod.POST)
-    public ModelAndView addProject(HttpServletRequest req,String name,String date,String accessdate,String local1,String local2,String local3,String address,String type,String docnum,@RequestParam("file") MultipartFile file){
+    public String addProject(HttpServletRequest req,String name,String date,String accessdate,String local1,String local2,String local3,String address,String type,String docnum,@RequestParam("file") MultipartFile file){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
@@ -34,13 +34,13 @@ public class Project extends FileUpload{
         int rs=service.addProject(userid,name,date,accessdate,local1,local2,local3,address,type,docnum,filepath,filename);
         if (rs==1){
             System.out.println("数据录入成功");
-            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+            return "redirect:/page/home";
         }
         return null;
     }
     
     @RequestMapping("/show")
-    public ModelAndView show(HttpServletRequest req,String pageTo,String type,String local1,String local2,String page){
+    public String  show(HttpServletRequest req,String pageTo,String type,String local1,String local2,String page){
         ServletContext sc=req.getSession().getServletContext();
         sc.removeAttribute("project");
         int currentPage=1;
@@ -63,7 +63,7 @@ public class Project extends FileUpload{
         req.setAttribute("pageNum",currentPage);
         req.setAttribute("type",type);
         service.show(req,currentPage,type,local1,local2);
-        return new ModelAndView("/page/project");
+        return "/page/project";
     }
 
 }

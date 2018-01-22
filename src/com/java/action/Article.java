@@ -20,7 +20,7 @@ public class Article {
     @Autowired
     ArticleService service;
     @RequestMapping(value = "add",method = RequestMethod.POST)
-    public ModelAndView add(HttpServletRequest req,String name,String content,String type){
+    public String add(HttpServletRequest req,String name,String content,String type){
         HttpSession session=req.getSession();
         User user= (User) session.getAttribute("user");
         int userid=user.getUserid();
@@ -29,12 +29,12 @@ public class Article {
         int rs=service.addArticle(userid,date,name,content,type);
         if (rs!=0){
             System.out.println("数据录入成功");
-            return new ModelAndView(new RedirectView("http://localhost/qhzdxt/page/home.jsp"));
+            return "redirect:/page/home.jsp";
         }
         return null;
     }
     @RequestMapping("/show")
-    public ModelAndView show(HttpServletRequest req,String PageNum){
+    public String show(HttpServletRequest req,String PageNum){
         ServletContext sc=req.getSession().getServletContext();
         sc.removeAttribute("article");
         int currentPage=1;
@@ -43,6 +43,6 @@ public class Article {
         }
         req.setAttribute("pageNum",currentPage);
         service.show(req,currentPage);
-        return new ModelAndView("/page/article");
+        return "/page/article";
     }
 }
