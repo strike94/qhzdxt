@@ -85,7 +85,7 @@ $(function(){
       </div>
 
     </div>
-    <form action="<%=basePath %>back/Plan/Plandetile" method="post" enctype="multipart/form-data">
+    <form action="<%=basePath %>back/Plan/Plandetail" method="post" enctype="multipart/form-data">
       <div class="pulicBox">
         <div class="newArticle">
           <div class="msgEditlabel clearfix">
@@ -135,8 +135,8 @@ $(function(){
       </div>
       <div class="ctrlBar">
         <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-        <button class="ctrlBtn canclBtn"name="state" value="待提交">打回</button>
-        <button class="ctrlBtn focusBtn" onClick="javascript:location.href='addPlan.html'" name="state" value="已发布">审核通过并发布</button>
+        <button class="ctrlBtn canclBtn"name="state" value="1">打回</button>
+        <button class="ctrlBtn focusBtn"  name="state" value="3">审核通过并发布</button>
       </div>
     </form>
   </div>

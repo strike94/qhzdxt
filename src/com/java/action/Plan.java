@@ -35,7 +35,7 @@ public class Plan extends FileUpload{
         int rs=service.updatePlan(Planid,userid,name,docnum,date,local1,local2,local3,address,filepath,filename,state);
         if (rs==1){
             System.out.println("数据修改成功");
-            return "redirect:/page/Plan";
+            return "redirect:/back/Plan/show";
         }
         return "redirect:/page/updatePlan";
     }

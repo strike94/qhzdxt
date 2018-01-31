@@ -74,7 +74,7 @@ public class PlanService extends Origin{
         map.put("s_time",date);
         map.put("url",filepath);
         map.put("filename",filename);
-        map.put("stateid",state);
+        map.put("stateid",Integer.parseInt(state));
         int rs=super.sqlSessionTemplate.update("PlanNameSpace.updatePlan",map);
         return rs;
     }
