@@ -66,7 +66,7 @@ public class NoticeService extends Origin{
     
     public int updatenotice(String noticeid,int userid,String name,String docnum,String date,String local1,String local2,String local3,String address,String filepath,String filename,String state){
         Map map=new HashMap();
-        map.put("notice_id",noticeid);
+        map.put("notice_id",Integer.parseInt(noticeid));
         map.put("notice_userid",userid);
         map.put("notice_name",name);
         map.put("notice_docnum",docnum);
