@@ -74,6 +74,7 @@
                     <div class="msgEditlabel clearfix">
                         <div class="halfPart"> <em class="frmLabel">公告名称</em>
                             <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.notice_name} </div>
+                            <input type="hidden" class="textInput" name="noticeid"value="${data.notice_id}"/>
                             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                         </div>
                         <div class="halfPart"> <em class="frmLabel">文号</em>
