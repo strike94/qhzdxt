@@ -164,7 +164,7 @@
                             <td><span class="btnChose ctrlChosen selected" onclick="checkboxSelect(this)">
                 <input name="" type="checkbox" value="" />
                 <i></i></span></td>
-                            <td><a href="<%=basePath%>notice/detail?noticeid=${obj.notice_id}" class="heightColor">${obj.notice_name}</a></td>
+                            <td><a href="<%=basePath%>back/notice/detail?noticeid=${obj.notice_id}" class="heightColor">${obj.notice_name}</a></td>
                             <td>${obj.notice_docnum}</td>
                             <td>${obj.notice_local1}${obj.notice_local2}${obj.notice_local3}</td>
                             <td>${obj.notice_date }</td>
