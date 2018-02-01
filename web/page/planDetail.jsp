@@ -134,7 +134,7 @@ $(function(){
           </div>
         </div>
       <div class="ctrlBar">
-        <button class="ctrlBtn" onClick="window.location='<%=basePath %>back/Plan/show'">返回</button>
+        <button class="ctrlBtn" type="button" onClick="javascript:history.back(-1);">返回</button>
         <button class="ctrlBtn focusBtn" type="submit" name="state" value="5">修改</button>
         <button class="ctrlBtn focusBtn" type="submit" name="state" value="2">提交审核</button>
       </div>

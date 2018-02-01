@@ -187,7 +187,7 @@
                 </div>
             </div>
             <div class="ctrlBar">
-                <button class="ctrlBtn" onClick="window.location='<%=basePath %>back/notice/show'">返回</button>
+                <button class="ctrlBtn" type="button" onClick="javascript:history.back(-1);">返回</button>
                 <button class="ctrlBtn focusBtn" type="submit" name="state" value="1">保存</button>
                 <button class="ctrlBtn focusBtn" type="submit" name="state" value="2">保存并送审</button>
             </div>
