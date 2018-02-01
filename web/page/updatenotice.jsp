@@ -103,7 +103,7 @@
             <div class="pulicBox">
                 <div class="newArticle">
                     <div class="msgEditlabel clearfix">
-                        <div class="halfPart"> <em class="frmLabel">公告名称</em>
+                        <div class="halfPart"> <em class="frmLabel"></em>
                             <input type="hidden" class="textInput" name="noticeid"value="${data.notice_id}"/>
                             <input type="text" class="textInput" name="name"value=" ${data.notice_name}"/>
                             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="msgEditlabel clearfix">
-                        <div class="halfPart"> <em class="frmLabel">发布时间</em>
+                        <div class="halfPart"> <em class="frmLabel"></em>
                             <input type="text" class="textInput" onClick="WdatePicker()" name="date"value="${data.s_time}"/>
                             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                         </div>
