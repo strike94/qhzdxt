@@ -110,7 +110,9 @@
                             </div>
                         </div>
                         <div class="halfPart"> <em class="frmLabel">文号</em>
-                            <div class="frmInputBox frmInputBoxNoTextLimit"name="docnum"value="${data.notice_docnum}"></div>
+                            <div class="frmInputBox frmInputBoxNoTextLimit">
+                                <input type="text" class="textInput"  name="docnum"value="${data.notice_docnum}" />
+                            </div>
                         </div>
                     </div>
                     <div class="msgEditlabel clearfix">
@@ -160,7 +162,7 @@
                     <div class="msgEditlabel clearfix">
                         <div class="halfPart"> <em class="frmLabel">所属村居</em>
                             <div class="frmInputBox frmInputBoxNoTextLimit">
-                                <input type="text" class="textInput" name="address"value="${data.Plan_street}"/>
+                                <input type="text" class="textInput" name="address"value="${data.notice_street}"/>
                             </div>
                             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                         </div>

@@ -64,7 +64,7 @@ public class PlanService extends Origin{
 
     public int updatePlan(String Planid,int userid,String name,String docnum,String date,String local1,String local2,String local3,String address,String filepath,String filename,String state){
         Map map=new HashMap();
-        map.put("Plan_id",Planid);
+        map.put("Plan_id",Integer.parseInt(Planid));
         map.put("Plan_userid",userid);
         map.put("Plan_name",name);
         map.put("Plan_docnum",docnum);
