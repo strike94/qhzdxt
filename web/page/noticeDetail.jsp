@@ -97,14 +97,14 @@
                     </div>
                     <div class="msgEditlabel clearfix">
                         <div class="halfPart"> <em class="frmLabel">项目位置</em>
-                            <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.notice_address} </div>
+                            <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.notice_local1}${data.notice_local2}${data.notice_local3}</div>
                             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                         </div>
                     </div>
                     <div class="msgEditlabel clearfix">
                         <div class="halfPart"> <em class="frmLabel">所属村居</em>
                             <div class="frmInputBox frmInputBoxNoTextLimit">
-                                ${data.notice_address}
+                                ${data.notice_street}
                             </div>
                             <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
                         </div>
