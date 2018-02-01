@@ -134,7 +134,7 @@ $(function(){
         </div>
       </div>
       <div class="ctrlBar">
-        <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
+        <button class="ctrlBtn" onClick="window.location='<%=basePath %>back/Plan/show'">返回</button>
         <button class="ctrlBtn canclBtn"name="state" value="1">打回</button>
         <button class="ctrlBtn focusBtn"  name="state" value="3">审核通过并发布</button>
       </div>
