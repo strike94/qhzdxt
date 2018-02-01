@@ -26,6 +26,7 @@ public class PlanService extends Origin{
         int rs=super.sqlSessionTemplate.insert("PlanNameSpace.addPlan",map);
         return rs;
     }
+
     public void show(HttpServletRequest req, int currentPage,String local1, String local2) {
         ServletContext sc=req.getSession().getServletContext();
         int pageSize=5;

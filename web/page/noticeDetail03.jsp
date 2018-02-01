@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 神裂火织
-  Date: 2018/1/2
-  Time: 15:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%   String path = request.getContextPath();
@@ -18,14 +11,14 @@
     <meta name="Description" content=""/>
     <meta name="keywords" content=""/>
     <title>青海省征地信息公开系统-拟征收土地公告-新增</title>
-    <link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/base.css" />
-    <link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/default.css" />
-    <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/chosen/chosen.min.css" />
-    <link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/artDialog-master/css/ui-dialog.css" />
-    <script type="text/javascript" src="<%=basePath%>/javascript/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="<%=basePath%>/javascript/chosen/chosen.jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="<%=basePath%>/javascript/My97DatePicker/WdatePicker.js"></script>
-    <script type="text/javascript" src="<%=basePath%>/javascript/artDialog-master/dist/dialog-plus-min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../themes/base.css" />
+    <link type="text/css" rel="stylesheet" href="../themes/default.css" />
+    <link type="text/css" rel="stylesheet" href="../javascript/chosen/chosen.min.css" />
+    <link type="text/css" rel="stylesheet" href="../javascript/artDialog-master/css/ui-dialog.css" />
+    <script type="text/javascript" src="../javascript/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../javascript/chosen/chosen.jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../javascript/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../javascript/artDialog-master/dist/dialog-plus-min.js"></script>
     <script type="text/javascript">
         $(function(){
 
@@ -44,7 +37,6 @@
                 d.content(elem).showModal();
             });
         });
-
     </script>
 </head>
 
@@ -73,7 +65,7 @@
         <div class="processWrap">
             <div class="processBox threeStep">
                 <div class="percentage"></div>
-                <div class="pocessLine"> <span class="processPoint active"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">县级发起批前项目</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">市（州）审核</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">发布成功</b> </span> </div>
+                <div class="pocessLine"> <span class="processPoint passed"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">县级发起批前项目</b> </span> <span class="processPoint active"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">市（州）审核</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">发布成功</b> </span> </div>
             </div>
         </div>
         <form action="<%=basePath %>back/notice/noticedetail" method="post" enctype="multipart/form-data">
@@ -124,8 +116,7 @@
             </div>
             <div class="ctrlBar">
                 <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-                <button class="ctrlBtn focusBtn" type="submit" name="state" value="5">修改</button>
-                <button class="ctrlBtn focusBtn" type="submit" name="state" value="2">送审</button>
+                <button class="ctrlBtn canclBtn" name="state" value="3">发布</button>
             </div>
         </form>
     </div>

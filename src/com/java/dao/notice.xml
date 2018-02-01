@@ -6,6 +6,16 @@
          INSERT INTO z_notice(notice_name,notice_date,notice_userid,notice_local1,notice_local2,notice_local3,notice_street,notice_docnum,notice_type,notice_url,notice_context) VALUES (#{name},#{date},#{g_userid},#{local1},#{local2},#{local3},#{add},#{docnum},#{type},#{url},#{filename});
     </insert>
 
+    <update id="updatenotice" parameterType="map">
+        UPDATE z_notice SET notice_userid=#{notice_userid},notice_name=#{notice_name},notice_docnum=#{notice_docnum},notice_local1=#{local1},
+        notice_local2=#{local2},notice_local3=#{local3},notice_street=#{address},s_time=#{s_time},notice_url=#{url},notice_context=#{filename},stateid=#{stateid}
+        WHERE notice_id=#{notice_id}
+    </update>
+
+    <update id="detailnotice" parameterType="map">
+        UPDATE z_notice SET  stateid=#{stateid} WHERE notice_id=#{notice_id}
+    </update>
+
     <select id="selectnotice" parameterType="map" resultType="map">
         SELECT * FROM z_notice
         <where>

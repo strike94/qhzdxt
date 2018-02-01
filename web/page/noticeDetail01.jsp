@@ -11,14 +11,14 @@
 <meta name="Description" content=""/>
 <meta name="keywords" content=""/>
 <title>青海省征地信息公开系统-拟征收土地公告-新增</title>
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/base.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/themes/css/default.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/chosen/chosen.min.css" />
-<link type="text/css" rel="stylesheet" href="<%=basePath%>/javascript/artDialog-master/css/ui-dialog.css" />
-<script type="text/javascript" src="<%=basePath%>/javascript/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>/javascript/chosen/chosen.jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="<%=basePath%>/javascript/My97DatePicker/WdatePicker.js"></script>
-<script type="text/javascript" src="<%=basePath%>/javascript/artDialog-master/dist/dialog-plus-min.js"></script>
+<link type="text/css" rel="stylesheet" href="../themes/base.css" />
+<link type="text/css" rel="stylesheet" href="../themes/default.css" />
+<link type="text/css" rel="stylesheet" href="../javascript/chosen/chosen.min.css" />
+<link type="text/css" rel="stylesheet" href="../javascript/artDialog-master/css/ui-dialog.css" />
+<script type="text/javascript" src="../javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../javascript/chosen/chosen.jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="../javascript/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../javascript/artDialog-master/dist/dialog-plus-min.js"></script>
 <script type="text/javascript">
 $(function(){
 	
@@ -39,6 +39,7 @@ $(function(){
 	});
 </script>
 </head>
+
 <body>
 <div class="header">
   <h1 class="logoText">青海省征地信息公开系统</h1>
@@ -60,58 +61,41 @@ $(function(){
 </div>
 <div class="content">
   <div class="wrp clearfix">
-    <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">拟征收土地补偿安置方案公告</a><b class="partLine grayColor">/</b><b>新增拟征收土地补偿安置方案公告</b></span></div>
+    <div class="crumbs clearfix"><span class="backTo"><a href="javascript:history.go(-1)" class="backToIcon"></a><a class="backLinks heightColor" href="javascript:history.go(-1)">拟征收土地公告</a><b class="partLine grayColor">/</b><b>新增拟征收土地公告</b></span></div>
     <div class="processWrap">
       <div class="processBox threeStep">
         <div class="percentage"></div>
-        <div class="pocessLine">
-    <span class="processPoint active">
-    <em class="percentage"></em>
-    <i class="pointIcon"></i>
-    <b class="ponitText">县级发起批前项目</b>
-    </span>
-          <span class="processPoint">
-    <em class="percentage"></em>
-    <i class="pointIcon"></i>
-    <b class="ponitText">市（州）审核</b>
-    </span>
-          <span class="processPoint">
-    <em class="percentage"></em>
-    <i class="pointIcon"></i>
-    <b class="ponitText">发布成功</b>
-    </span>
-        </div>
+        <div class="pocessLine"> <span class="processPoint passed"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">县级发起批前项目</b> </span> <span class="processPoint active"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">市（州）审核</b> </span> <span class="processPoint"> <em class="percentage"></em> <i class="pointIcon"></i> <b class="ponitText">发布成功</b> </span> </div>
       </div>
-
     </div>
-    <form action="<%=basePath %>back/Plan/Plandetail" method="post" enctype="multipart/form-data">
-        <div class="pulicBox">
-          <div class="newArticle">
-            <div class="msgEditlabel clearfix">
-              <div class="halfPart"> <em class="frmLabel">公告名称</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit">${data.Plan_name}</div>
-                <input type="hidden" class="textInput" name="name"value="${data.Plan_name}"/>
-              </div>
-              <div class="halfPart"> <em class="frmLabel">文号</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit" >${data.Plan_docnum}</div>
-              </div>
+    <form action="<%=basePath %>back/notice/noticedetail" method="post" enctype="multipart/form-data">
+      <div class="pulicBox">
+        <div class="newArticle">
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart"> <em class="frmLabel">公告名称</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.notice_name} </div>
+              <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
-            <div class="msgEditlabel clearfix">
-              <div class="halfPart"> <em class="frmLabel">发布时间</em>
-                <div class="frmInputBox frmInputBoxNoTextLimit"/>${data.s_time}</div>
+            <div class="halfPart"> <em class="frmLabel">文号</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.notice_docnum}</div>
+            </div>
+          </div>
+          <div class="msgEditlabel clearfix">
+            <div class="halfPart"> <em class="frmLabel">发布时间</em>
+              <div class="frmInputBox frmInputBoxNoTextLimit">${data.s_time}</div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">项目位置</em>
-              <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.Plan_local1}${data.Plan_local2}${data.Plan_local3} </div>
+              <div class="frmInputBox frmInputBoxNoTextLimit"> ${data.notice_address} </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
           <div class="msgEditlabel clearfix">
             <div class="halfPart"> <em class="frmLabel">所属村居</em>
               <div class="frmInputBox frmInputBoxNoTextLimit">
-                  ${data.Plan_street}
+                ${data.notice_address}
               </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
@@ -121,21 +105,20 @@ $(function(){
               <div class="frmInputBox frmInputBoxNoTextLimit">
                 <div class="uploadBox">
 
-                  <div class="uploadFinish" style="visibility: hidden">
-                    <i class="success"></i><!--失败调用error-->
-                    <span class="loadName">${data.fliename} </span>
-                    <a href="javascript:;" class="delUpfiles"></a>
-                  </div>
+                  <div class="uploadFinish"><!--失败调用error-->
+                    <a href="javascript:;" class="loadName" >${data.notice_context}  </a> </div>
                 </div>
               </div>
               <!--<div class="pagesTips errorText" style="display:block;">一个字也没有，你还想保存？</div>-->
             </div>
           </div>
         </div>
-        <div class="ctrlBar">
-          <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
-          <button class="ctrlBtn canclBtn" name="state" value="3">发布</button>
-        </div>
+      </div>
+      <div class="ctrlBar">
+        <button class="ctrlBtn" onClick="javascript:history.go(-1)">返回</button>
+        <button class="ctrlBtn focusBtn" type="submit" name="state" value="1">打回</button>
+        <button class="ctrlBtn focusBtn" type="submit" name="state" value="3">审核通过并发布</button>
+      </div>
     </form>
   </div>
 </div>

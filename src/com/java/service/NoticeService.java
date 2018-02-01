@@ -52,6 +52,36 @@ public class NoticeService extends Origin{
             }
         }
 
+    public int detailnotice(String noticeid,String state){
+        Map map=new HashMap();
+        map.put("notice_id",noticeid);
+        map.put("stateid",state);
+        int rs=super.sqlSessionTemplate.update("noticeNameSpace.detailnotice",map);
+        if(Integer.parseInt(state)==5 && rs==1){
+            rs=2;
+            return rs;
+        }
+        return  rs;
+    }
+    
+    public int updatenotice(String noticeid,int userid,String name,String docnum,String date,String local1,String local2,String local3,String address,String filepath,String filename,String state){
+        Map map=new HashMap();
+        map.put("notice_id",noticeid);
+        map.put("notice_userid",userid);
+        map.put("notice_name",name);
+        map.put("notice_docnum",docnum);
+        map.put("local1",local1);
+        map.put("local2",local2);
+        map.put("local3",local3);
+        map.put("address",address);
+        map.put("s_time",date);
+        map.put("url",filepath);
+        map.put("filename",filename);
+        map.put("stateid",Integer.parseInt(state));
+        int rs=super.sqlSessionTemplate.update("noticeNameSpace.updatenotice",map);
+        return rs;
+    }
+
     public Map detail(String noticeid) {
         Map map=new HashMap();
         map.put("noticeid",noticeid);

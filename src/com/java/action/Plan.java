@@ -83,7 +83,7 @@ public class Plan extends FileUpload{
         return "page/Plan";
     }
 
-    @RequestMapping("detail")
+    @RequestMapping("/detail")
     public ModelAndView detail(String Planid){
         Map data=service.detail(Planid);
         Map map=new HashMap();

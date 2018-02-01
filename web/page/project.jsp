@@ -167,7 +167,7 @@
                   <td><span class="heightColor moreTips">详情<i class="tipsIcon"></i>
                 <div class="menuGroupBox">
                   <ul>
-                    <li><a href="projectDetail.html">详情</a></li>
+                    <li><a href="projectDetail.jsp">详情</a></li>
                     <li><a href="javascript:;">发布</a></li>
                     <li><a href="javascript:;" class="delPlan">删除</a></li>
                   </ul>

@@ -157,32 +157,6 @@ $(function(){
 <div class="messageBox">
 <div class="messageBoxContent">
   <div class="messageMain">
-    <ul>
-      <li class="messageItem">
-        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
-        <div class="messageBlock">
-        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
-        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.html">立即处理</a>
-        </div>
-      </li>
-      <li class="messageItem">
-        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
-        <div class="messageBlock">
-        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
-        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.html">立即处理</a>
-        </div>
-      </li>
-      <li class="messageItem">
-        <div class="messageTime"> <i class="lineBg"></i><b class="timePoint"></b><p class="timeBlock">2017-06-05<br />21:21</p></div>
-        <div class="messageBlock">
-        <h2 class="messageItemTitle">2017年度西商村拟征收土地公告</h2>
-        <p class="cmessageContent">项目由省厅发起，项目位置西宁市上东区，项目文号ABC-123456。</p>
-        <a class="messageTodo" href="plan.html">立即处理</a>
-        </div>
-      </li>
-    </ul><div class="loadMore">
     <a href="javascript:;">加载更多</a>
     </div>
   </div>
