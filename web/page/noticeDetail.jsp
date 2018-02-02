@@ -125,7 +125,7 @@
             </div>
             <div class="ctrlBar">
                 <button class="ctrlBtn" type="button" onClick="javascript:history.back(-1);">返回</button>
-                <button class="ctrlBtn focusBtn" type="submit" name="state" value="5">修改</button>
+                <button class="ctrlBtn focusBtn" type="submit" name="state" value="3">修改</button>
                 <button class="ctrlBtn focusBtn" type="submit" name="state" value="2">送审</button>
             </div>
         </form>
