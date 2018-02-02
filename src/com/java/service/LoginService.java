@@ -23,4 +23,20 @@ public class LoginService extends  Origin{
         }
         return null;
     }
+
+    public Map count(){
+        int article=super.sqlSessionTemplate.selectOne("loginNameSpace.artcount");
+        int noticepre=super.sqlSessionTemplate.selectOne("loginNameSpace.noticepre");
+        int noticenext=super.sqlSessionTemplate.selectOne("loginNameSpace.noticenext");
+        int projectpre=super.sqlSessionTemplate.selectOne("loginNameSpace.projectpre");
+        int projectnext=super.sqlSessionTemplate.selectOne("loginNameSpace.projectnext");
+        Map map=new HashMap();
+        map.put("article",article);
+        map.put("noticepre",noticepre);
+        map.put("noticenext",noticenext);
+        map.put("projectpre",projectpre);
+        map.put("projectnext",projectnext);
+        return map;
+
+    }
 }

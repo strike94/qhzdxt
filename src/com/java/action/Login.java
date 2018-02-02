@@ -11,6 +11,8 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("login")
@@ -23,9 +25,16 @@ public class Login {
         if (user!= null) {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            return  "redirect:/page/home.jsp";
+            return  "redirect:/login/back";
         }else{
             return "/page/login";
         }
     }
+
+    @RequestMapping("/back")
+    public ModelAndView back(){
+        Map map= service.count();
+        return new ModelAndView("/page/home",map);
+    }
+
 }

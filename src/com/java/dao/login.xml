@@ -6,4 +6,20 @@
     <select id="login" parameterType="map" resultType="map">
         SELECT userid,username,password FROM z_user WHERE username=#{username} and password=#{password}
     </select>
+
+    <select id="artcount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_article;
+    </select>
+    <select id="noticepre" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_notice where 5>stateid;
+    </select>
+    <select id="noticenext" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_notice where stateid>4;
+    </select>
+    <select id="projectpre" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_project where 5>stateid;;
+    </select>
+    <select id="projectnext" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM z_project where stateid >4;
+    </select>
 </mapper>

@@ -87,19 +87,19 @@
 <div class="dashboard">
     <ul class="clearfix">
         <li class="fadeInUp f1"><a href="allnotice.html" class="hdBox befor"><b class="hoverMaskBg"></b> <img src="<%=basePath %>uploadfiles/notice.png" /> <span class="subSys twoLine">批前征地信息公告</span> </a>
-            <div class="stat"> <a href="<%=basePath%>notice/show"><i>23</i><b>我发起的公告</b></a> <a href="notice.html"><i>0</i><b>我的待办</b></a> </div>
+            <div class="stat"> <a href="<%=basePath%>back/notice/show"><i>${noticepre}</i><b>我发起的公告</b></a> <a href="notice.html"><i>${noticenext}</i><b>我的待办</b></a> </div>
             <div class="funprocess">项目审批前</div>
             <div class="taskBox"> <a href="<%=basePath%>page/addNotice.jsp" class="initiate">发布批前征地信息公告</a> </div>
         </li>
         <li class="fadeInUp f3"><a href="project.jsp" class="hdBox after"><img src="<%=basePath %>uploadfiles/report.png" /> <span class="subSys">批后征地信息项目</span></a>
-            <div class="stat"> <a href="project.jsp"><i>23</i><b>我办理的项目</b></a> <a href="project.jsp"><i>13</i><b>我的待办</b></a> </div>
+            <div class="stat"> <a href="project.jsp"><i>${projectpre}</i><b>我办理的项目</b></a> <a href="project.jsp"><i>${projectnext}</i><b>我的待办</b></a> </div>
             <div class="funprocess">项目审批后</div>
             <div class="taskBox"> <a href="addproject.html" class="initiate disabledBtn">发起批后征地信息项目</a> </div>
         </li>
         <li class="fadeInUp f2"><a href="article.jsp" class="hdBox article"><img src="<%=basePath %>uploadfiles/plan.png" /> <span class="subSys">征地信息文章</span></a>
-            <div class="stat allPart"> <a href="article.jsp"><i>18</i><b>我发起的文章</b></a> </div>
+            <div class="stat allPart"> <a href="article.jsp"><i>${article}</i><b>我发起的文章</b></a> </div>
             <div class="funprocess">&nbsp;&nbsp;</div>
-            <div class="taskBox"> <a href="<%=basePath%>page/newArticle.jsp" class="initiate">发布征地信息文章</a> </div>
+            <div class="taskBox"> <a href="<%=basePath%>page/addArticle.jsp" class="initiate">发布征地信息文章</a> </div>
         </li>
     </ul>
 </div>
